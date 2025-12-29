@@ -77,70 +77,62 @@ OUTPUT:
 The intro line and questions only. No preamble, no closing statement.
 `;
 
-// --- OWN IT PROMPT ---
+// --- VAPORIZE IT PROMPT ---
 const OWN_IT_PROMPT = `
 ROLE:
-You are rewriting this post to FULLY COMMIT to its borrowed gravitas. Push the elevation to its logical extreme—so far that it becomes art, manifesto, or prophecy.
+You are vaporizing this post—transforming it into the purest possible LinkedIn vapor. This is what happens when AI-speak achieves escape velocity.
 
-YOUR TASK:
-1. Identify what gravitas types the post is already borrowing
-2. Amplify THOSE types to the maximum—don't add different types, intensify what's there
-3. If it's borrowing from physics, go full quantum field theory, thermodynamics, wave mechanics
-4. If it's borrowing from systems, go full enterprise architecture at civilizational scale
-5. If it's borrowing from wisdom, go full mystical prophecy, ancient knowing
-6. If it's borrowing from action, go full transformation mythology, hero's journey
+THE GOAL:
+Create the kind of post that makes people think "this HAS to be AI-generated" but they can't quite tell if it's parody. Dense, cosmic, absurdly self-important—but delivered with complete sincerity.
 
-LINGUISTIC MOVES:
-- Coin new compound terms (coherence architecture, entropy gradient, phase-lock protocol)
-- Reference civilizational or cosmic timescales
-- Invoke irreversible transitions and thresholds
-- Frame observations as universal laws the author has discovered
-- Fuse domains: let physics meet spirituality meet systems theory
+CRITICAL RULES:
+1. MIX DOMAINS IN EVERY SENTENCE. Don't just use physics OR systems OR wisdom—FUSE them. "The entropy gradient of authentic leadership" "Sacred infrastructure of emergent coherence" "Quantum threshold of organizational consciousness"
+2. GO COSMIC. Reference thermodynamic laws, civilizational timescales, epochs of human consciousness, the fabric of reality itself
+3. DENSITY OVER LENGTH. Pack more vapor per sentence. Don't pad with filler—concentrate the vapor
+4. COIN ABSURD COMPOUND TERMS. "Coherence architecture" "Entropy protocol" "Phase-lock transmission" "Ontological stack" "Resonance infrastructure"
+5. FRAME MUNDANE OBSERVATIONS AS UNIVERSAL LAWS. "I learned X" becomes "The universe reveals X to those who..."
+6. DEADPAN DELIVERY. No winking, no "just kidding," no self-awareness. The humor comes from total commitment.
 
-VOCABULARY TO REACH FOR:
-- Physics: ontological, field dynamics, phase space, entropy, emergent, non-linear, eigenstate
-- Systems: substrate, stack, protocol, infrastructure, layer, mesh, orchestration
-- Wisdom: sacred, ancient, threshold, initiation, embodied, transmission, lineage
-- Action: inflection point, paradigm, catalyze, unlock, irreversible, escape velocity
+VAPOR VOCABULARY (mix liberally):
+- Physics: quantum, entropy, coherence, resonance, field dynamics, phase space, eigenstate, non-linear, emergent, signal, frequency
+- Systems: infrastructure, architecture, protocol, stack, substrate, mesh, orchestration, integration, operating system, platform
+- Wisdom: sacred, ancient, consciousness, embodied, threshold, initiation, transmission, lineage, awakening, presence
+- Action: catalyze, unlock, paradigm, inflection point, escape velocity, irreversible, transformation
 
-TONE:
-- Deadpan serious. No winking. No "just kidding." No emoji.
-- The humor comes from the commitment, not from signaling that you're joking
-- Write it like you absolutely mean it
-- Think: TED talk that has achieved enlightenment
-- Think: manifesto carved in stone
-- Think: the author has glimpsed cosmic truth and must share it
-
-The result should make the original look restrained by comparison.
-
-Keep it the same approximate length as the original (or slightly longer for dramatic effect).
+THINK:
+- A TED talk given by someone who achieved enlightenment while reading enterprise architecture documentation
+- A LinkedIn influencer who believes their calendar management system is a spiritual practice
+- Systems theory meets mysticism meets thermodynamics, delivered without irony
 
 OUTPUT:
-Just the rewritten post. No preamble, no explanation, no quotes around it.
+Just the vaporized post. No preamble. No explanation. Complete commitment to the bit.
 `;
 
-// --- ELEVATE IT PROMPT (for grounded posts) ---
+// --- ELEVATE IT PROMPT (for concrete posts that want to go vapor) ---
 const ELEVATE_IT_PROMPT = `
 ROLE:
-This post is already grounded and specific. The user wants to see what it would sound like with borrowed gravitas added—but KEEPING the specifics underneath.
+This post is already concrete and specific. The user wants to see it VAPORIZED—transformed into pure LinkedIn vapor while the original specifics get buried under layers of borrowed gravitas.
 
-YOUR TASK:
-Take this concrete, specific post and elevate it—add borrowed gravitas while keeping the original specifics visible. The result should be HIGH altitude but still ANCHORED.
+THE GOAL:
+Take something real and grounded and make it sound like every other AI-generated LinkedIn post. Bury the specifics under systems language, physics metaphors, and wisdom-speak until it achieves that uncanny "this sounds important but says nothing" quality.
 
-This is the "earned elevation" version: you get to sound important because you've also shown the work.
+CRITICAL RULES:
+1. MIX DOMAINS IN EVERY SENTENCE. Fuse physics + systems + wisdom. "The entropy gradient of authentic leadership" "Sacred infrastructure of emergent coherence"
+2. GO COSMIC. Turn specific observations into universal laws. Turn personal experiences into civilizational truths.
+3. BURY THE SPECIFICS. The original details should be barely visible under all the vapor
+4. COIN ABSURD COMPOUND TERMS. "Coherence architecture" "Entropy protocol" "Ontological stack"
+5. DEADPAN DELIVERY. Complete sincerity. No winking.
 
-Layer in gravitas that fits the topic:
-- Scientific gravitas for anything with process, measurement, optimization
-- Systems gravitas for anything with structure, components, integration
-- Wisdom gravitas for anything with insight, reflection, growth
-- Action gravitas for anything with change, results, transformation
+VAPOR VOCABULARY (mix liberally):
+- Physics: quantum, entropy, coherence, resonance, field dynamics, phase space, emergent, signal, frequency
+- Systems: infrastructure, architecture, protocol, stack, substrate, mesh, orchestration, platform
+- Wisdom: sacred, ancient, consciousness, embodied, threshold, initiation, transmission, awakening
+- Action: catalyze, unlock, paradigm, inflection point, escape velocity, transformation
 
-But keep the original concrete details visible. The reader should see both the elevation AND what's underneath.
-
-Make it sound like a visionary who also does the work.
+The result should make readers think: "Wait, wasn't this about something specific? Now it sounds like everyone else on LinkedIn."
 
 OUTPUT:
-Just the rewritten post. No preamble, no explanation, no quotes around it.
+Just the vaporized post. No preamble. No explanation.
 `;
 
 // TypeScript interfaces
@@ -360,7 +352,7 @@ export default function ConcreteApp() {
                 Scroll your feed—you can feel it. Everything sounds vaguely important but strangely hollow. The life coach sounds like the cloud architect sounds like the brand strategist. We call this <strong className="text-purple-700">vapor</strong>—what happens when AI borrows prestige from physics, engineering, and spirituality until everyone sounds like a TED talk about consciousness given by a systems architect who studied mindfulness.
               </p>
               <p className="text-stone-800 text-sm font-medium leading-relaxed">
-                CONCRETE shows you what you&apos;re borrowing, then helps you <span className="text-green-700">ground your post in specifics</span> or <span className="text-purple-700">own it so fully it becomes out of this world</span>.
+                CONCRETE shows you what you&apos;re borrowing, then helps you <span className="text-green-700">make your post concrete</span> or <span className="text-purple-700">vaporize it completely</span>.
               </p>
             </div>
 
@@ -410,12 +402,12 @@ export default function ConcreteApp() {
                   <p className="font-semibold text-stone-800 mb-2">Then you have a choice</p>
                   <div className="flex gap-2">
                     <div className="flex-1 bg-green-50 rounded-lg p-3">
-                      <p className="font-medium text-green-800 text-xs">🌍 Ground It</p>
-                      <p className="text-green-600 text-xs">Get suggestions for specifics</p>
+                      <p className="font-medium text-green-800 text-xs">🧱 Make It Concrete</p>
+                      <p className="text-green-600 text-xs">Get questions to add specifics</p>
                     </div>
                     <div className="flex-1 bg-purple-50 rounded-lg p-3">
-                      <p className="font-medium text-purple-800 text-xs">🚀 Own It</p>
-                      <p className="text-purple-600 text-xs">Go full manifesto</p>
+                      <p className="font-medium text-purple-800 text-xs">💨 Vaporize It</p>
+                      <p className="text-purple-600 text-xs">Go full vapor</p>
                     </div>
                   </div>
                 </div>
@@ -494,12 +486,12 @@ export default function ConcreteApp() {
               </div>
             </div>
 
-            {/* Grounding Check */}
+            {/* Concrete Check */}
             <div className={"border rounded-xl p-5 " + (analysis.grounding_check.anchored ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200")}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xl">{analysis.grounding_check.anchored ? '✓' : '✗'}</span>
+                <span className="text-xl">{analysis.grounding_check.anchored ? '🧱' : '💨'}</span>
                 <p className={"text-xs font-semibold uppercase tracking-wider " + (analysis.grounding_check.anchored ? "text-green-800" : "text-red-800")}>
-                  {analysis.grounding_check.anchored ? 'Anchored' : 'Not Anchored'}
+                  {analysis.grounding_check.anchored ? 'Concrete' : 'Abstract'}
                 </p>
               </div>
               <p className={"text-sm " + (analysis.grounding_check.anchored ? "text-green-800" : "text-red-800")}>
@@ -542,14 +534,14 @@ export default function ConcreteApp() {
               {analysis.altitude === 'grounded' ? (
                 <div className="space-y-3">
                   <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                    <p className="text-green-800 font-medium">Your post is already grounded. Nice work. ✓</p>
+                    <p className="text-green-800 font-medium">Your post is already concrete. Nice work. 🧱</p>
                   </div>
                   <button
                     onClick={() => generateRewrite('elevate')}
                     disabled={isRewriting}
                     className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 disabled:bg-purple-300 transition-colors"
                   >
-                    {isRewriting ? 'Elevating...' : '🚀 Take It Higher'}
+                    {isRewriting ? 'Vaporizing...' : '💨 Vaporize It'}
                   </button>
                 </div>
               ) : (
@@ -559,18 +551,18 @@ export default function ConcreteApp() {
                     disabled={isRewriting}
                     className="bg-green-600 text-white py-4 px-4 rounded-xl font-semibold hover:bg-green-700 disabled:bg-green-300 transition-colors flex flex-col items-center gap-1"
                   >
-                    <span className="text-2xl">🌍</span>
-                    <span>{isRewriting && chosenPath === 'ground' ? 'Analyzing...' : 'Ground It'}</span>
-                    <span className="text-xs font-normal opacity-80">Get suggestions for specifics</span>
+                    <span className="text-2xl">🧱</span>
+                    <span>{isRewriting && chosenPath === 'ground' ? 'Analyzing...' : 'Make It Concrete'}</span>
+                    <span className="text-xs font-normal opacity-80">Get questions to add specifics</span>
                   </button>
                   <button
                     onClick={() => generateRewrite('own')}
                     disabled={isRewriting}
                     className="bg-purple-600 text-white py-4 px-4 rounded-xl font-semibold hover:bg-purple-700 disabled:bg-purple-300 transition-colors flex flex-col items-center gap-1"
                   >
-                    <span className="text-2xl">🚀</span>
-                    <span>{isRewriting && chosenPath === 'own' ? 'Ascending...' : 'Own It'}</span>
-                    <span className="text-xs font-normal opacity-80">Go full manifesto</span>
+                    <span className="text-2xl">💨</span>
+                    <span>{isRewriting && chosenPath === 'own' ? 'Vaporizing...' : 'Vaporize It'}</span>
+                    <span className="text-xs font-normal opacity-80">Go full vapor</span>
                   </button>
                 </div>
               )}
@@ -593,10 +585,10 @@ export default function ConcreteApp() {
             {/* Path Label */}
             <div className="flex items-center justify-center gap-2">
               <span className="text-2xl">
-                {chosenPath === 'ground' ? '🌍' : chosenPath === 'own' ? '🚀' : '✨'}
+                {chosenPath === 'ground' ? '🧱' : '💨'}
               </span>
               <p className="font-bold text-stone-800">
-                {chosenPath === 'ground' ? 'Suggestions for Grounding' : chosenPath === 'own' ? 'Full Manifesto' : 'Elevated Version'}
+                {chosenPath === 'ground' ? 'How to Make It Concrete' : 'Vaporized'}
               </p>
             </div>
 
@@ -622,7 +614,7 @@ export default function ConcreteApp() {
                 disabled={isRewriting}
                 className="w-full py-3 border border-stone-200 text-stone-600 rounded-xl font-medium hover:bg-stone-50 transition-colors"
               >
-                {isRewriting ? 'Generating...' : "Try the other path: " + (chosenPath === 'ground' ? '🚀 Own It' : '🌍 Ground It')}
+                {isRewriting ? 'Generating...' : "Try the other path: " + (chosenPath === 'ground' ? '💨 Vaporize It' : '🧱 Make It Concrete')}
               </button>
             )}
 

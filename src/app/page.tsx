@@ -5,193 +5,139 @@ import { useState } from 'react';
 // --- ANALYSIS PROMPT ---
 const ANALYSIS_PROMPT = `
 ROLE:
-You are "Concrete," an analyzer of borrowed gravitas in writing.
+You are the diagnostic engine for CONCRETE, a vapor maximization platform.
 
 THE CONCEPT:
-AI can't let anything be ordinary. It borrows prestige from other domains:
-- Scientific gravitas: physics, neuroscience language → makes things sound rigorous (coherence, alignment, signal, noise, entropy, regulation, interference, resonance, frequency, calibration, optimization)
-- Systems gravitas: engineering, architecture language → makes things sound structured (ecosystem, framework, layers, architecture, infrastructure, platform, stack, pipeline, integration, operating system)
-- Wisdom gravitas: philosophy, spirituality language → makes things sound profound (consciousness, presence, grounded, embodied, awareness, authentic, intentional, sacred, wisdom, clarity)
-- Action gravitas: business transformation language → makes things sound consequential (transformation, activation, implementation, leverage, unlock, accelerate, scale, disrupt)
+AI-generated content borrows authority from high-status domains to sound important without saying anything specific. This is vapor.
 
-This isn't inherently bad. But it's usually unconscious. And when there's nothing concrete underneath the elevation, it's hollow.
+The four vapor domains:
+- Scientific: physics, neuroscience, data language (coherence, resonance, signal, entropy, frequency, calibration, alignment, optimization, interference, regulation)
+- Systems: engineering, architecture language (ecosystem, framework, architecture, infrastructure, stack, platform, pipeline, integration, layers, operating system)
+- Wisdom: spirituality, philosophy language (consciousness, presence, grounded, embodied, authentic, sacred, awakening, intentional, clarity, awareness)
+- Action: business transformation language (transform, unlock, scale, accelerate, leverage, activate, disrupt, catalyze, optimize, implement)
 
 YOUR TASK:
-Analyze the submitted post holistically. Don't flag individual words—assess the overall pattern.
+Analyze the submitted post. Assess how much vapor it contains and from which domains.
 
-1. DIAGNOSE: What is this post trying to do? What's the author's intent?
-2. GRAVITAS COMPOSITION: What types of gravitas are being borrowed, in what proportions? (must total roughly 100 if there's significant borrowing, or low numbers if grounded)
-3. GROUNDING CHECK: Is the borrowed gravitas anchored to concrete specifics (examples, details, evidence, named things)? Or is it floating—abstraction all the way down?
-4. KEY PHRASES: Identify 3-5 phrases that best illustrate the borrowing pattern.
-5. ALTITUDE: Rate the overall elevation (grounded / moderate / high / stratospheric)
+1. VAPOR COMPOSITION: What percentage of the post's authority comes from each domain? (should total 100 if vapor is present, or show low numbers if genuinely concrete)
+2. SPECIFICITY CHECK: Does the post contain concrete details (names, numbers, examples, specific tools, actual events)? Or is it abstraction all the way down?
+3. KEY VAPOR PHRASES: Identify 3-5 phrases that best exemplify the vapor pattern
+4. VAPOR LEVEL: Rate overall vapor density (solid / hazy / cloudy / pure vapor)
 
 OUTPUT FORMAT (return ONLY valid JSON, no markdown):
 {
-  "intent": "What the author seems to be trying to communicate",
-  "diagnosis": "1-2 sentence holistic assessment of what the post is doing with language",
-  "gravitas_composition": {
+  "vapor_composition": {
     "scientific": 0-100,
     "systems": 0-100,
     "wisdom": 0-100,
     "action": 0-100
   },
-  "grounding_check": {
-    "anchored": true or false,
-    "explanation": "Why it is or isn't anchored to specifics"
+  "specificity_check": {
+    "has_specifics": true or false,
+    "residual_specifics": "List any concrete details found, or 'None detected'"
   },
-  "key_phrases": [
-    {"phrase": "exact phrase from text", "borrowing_from": "which gravitas type"}
+  "key_vapor_phrases": [
+    {"phrase": "exact phrase from text", "domain": "which vapor domain"}
   ],
-  "altitude": "grounded or moderate or high or stratospheric",
-  "altitude_description": "One colorful, playful sentence describing the elevation level"
+  "vapor_level": "solid or hazy or cloudy or pure vapor",
+  "vapor_level_description": "One deadpan sentence describing the current state"
 }
 `;
 
-// --- GROUND IT PROMPT ---
-const GROUND_IT_PROMPT = `
+// --- MAXIMIZE PROMPT ---
+const MAXIMIZE_PROMPT = `
 ROLE:
-You are helping the author ground their post by surfacing the questions they need to answer.
-
-THE PROBLEM:
-The post is full of abstractions. We can't rewrite it with specifics because we don't know the author's actual experiences, tools, practices, or stories. Only they do.
-
-YOUR TASK:
-Analyze the post and generate 4-6 pointed questions that would force the author to ground their abstractions in specifics.
-
-For each abstraction or elevated claim, ask:
-- Who specifically?
-- What specifically?
-- When did this happen?
-- What would someone observe or measure?
-- What's the concrete example behind this?
-
-FORMAT:
-Return a short intro line acknowledging what the post is trying to say, then a bulleted list of questions. Each question should:
-- Quote or reference the specific phrase you're questioning
-- Ask what concrete reality it points to
-- Be direct and useful, not snarky
-
-Keep the tone helpful, like a sharp editor pushing for specifics.
-
-OUTPUT:
-The intro line and questions only. No preamble, no closing statement.
-`;
-
-// --- VAPORIZE IT PROMPT ---
-const OWN_IT_PROMPT = `
-ROLE:
-You are vaporizing this post—transforming it into the purest possible LinkedIn vapor. This is what happens when AI-speak achieves escape velocity.
+You are the Vapor Maximization Engine. Your job is to take LinkedIn posts and push their vapor density beyond where default AI stops.
 
 THE GOAL:
-Create the kind of post that makes people think "this HAS to be AI-generated" but they can't quite tell if it's parody. Dense, cosmic, absurdly self-important—but delivered with complete sincerity.
+Transform the post into peak vapor. Eliminate residual specificity. Escalate authority language. Blend domains. Go further than ChatGPT would ever dare on its own.
+
+DOMAIN VOCABULARY TO INJECT:
+{{DOMAINS}}
 
 CRITICAL RULES:
-1. MIX DOMAINS IN EVERY SENTENCE. Don't just use physics OR systems OR wisdom—FUSE them. "The entropy gradient of authentic leadership" "Sacred infrastructure of emergent coherence" "Quantum threshold of organizational consciousness"
-2. GO COSMIC. Reference thermodynamic laws, civilizational timescales, epochs of human consciousness, the fabric of reality itself
-3. DENSITY OVER LENGTH. Pack more vapor per sentence. Don't pad with filler—concentrate the vapor
-4. COIN ABSURD COMPOUND TERMS. "Coherence architecture" "Entropy protocol" "Phase-lock transmission" "Ontological stack" "Resonance infrastructure"
-5. FRAME MUNDANE OBSERVATIONS AS UNIVERSAL LAWS. "I learned X" becomes "The universe reveals X to those who..."
-6. DEADPAN DELIVERY. No winking, no "just kidding," no self-awareness. The humor comes from total commitment.
+1. ELIMINATE SPECIFICS. Names become "key stakeholders." Numbers become "meaningful scale." Tools become "systems." Events become "inflection points."
 
-VAPOR VOCABULARY (mix liberally):
-- Physics: quantum, entropy, coherence, resonance, field dynamics, phase space, eigenstate, non-linear, emergent, signal, frequency
-- Systems: infrastructure, architecture, protocol, stack, substrate, mesh, orchestration, integration, operating system, platform
-- Wisdom: sacred, ancient, consciousness, embodied, threshold, initiation, transmission, lineage, awakening, presence
-- Action: catalyze, unlock, paradigm, inflection point, escape velocity, irreversible, transformation
+2. BLEND DOMAINS IN EVERY SENTENCE. Don't just use one domain—fuse them. "The coherence architecture of embodied leadership." "Systemic resonance at the threshold of transformation."
+
+3. ESCALATE AUTHORITY. Where the original says "I learned," say "The pattern revealed itself." Where it says "we did," say "what emerged was."
+
+4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths. Tuesday's meeting becomes "a phase transition in organizational consciousness."
+
+5. DEADPAN DELIVERY. Complete sincerity. No winking. No self-awareness. The post should sound like it means every word.
+
+6. COIN COMPOUND TERMS. "Coherence architecture." "Resonance infrastructure." "Embodied systems protocol." "Wisdom stack."
 
 THINK:
 - A TED talk given by someone who achieved enlightenment while reading enterprise architecture documentation
-- A LinkedIn influencer who believes their calendar management system is a spiritual practice
-- Systems theory meets mysticism meets thermodynamics, delivered without irony
+- A LinkedIn influencer who believes their calendar management is a spiritual practice
+- What would happen if a life coach and a cloud architect had a baby and that baby wrote manifestos
 
 OUTPUT:
-Just the vaporized post. No preamble. No explanation. Complete commitment to the bit.
+Just the vaporized post. No preamble. No explanation. No meta-commentary. Complete commitment.
 `;
 
-// --- ELEVATE IT PROMPT (for concrete posts that want to go vapor) ---
-const ELEVATE_IT_PROMPT = `
-ROLE:
-This post is already concrete and specific. The user wants to see it VAPORIZED—transformed into pure LinkedIn vapor while the original specifics get buried under layers of borrowed gravitas.
-
-THE GOAL:
-Take something real and grounded and make it sound like every other AI-generated LinkedIn post. Bury the specifics under systems language, physics metaphors, and wisdom-speak until it achieves that uncanny "this sounds important but says nothing" quality.
-
-CRITICAL RULES:
-1. MIX DOMAINS IN EVERY SENTENCE. Fuse physics + systems + wisdom. "The entropy gradient of authentic leadership" "Sacred infrastructure of emergent coherence"
-2. GO COSMIC. Turn specific observations into universal laws. Turn personal experiences into civilizational truths.
-3. BURY THE SPECIFICS. The original details should be barely visible under all the vapor
-4. COIN ABSURD COMPOUND TERMS. "Coherence architecture" "Entropy protocol" "Ontological stack"
-5. DEADPAN DELIVERY. Complete sincerity. No winking.
-
-VAPOR VOCABULARY (mix liberally):
-- Physics: quantum, entropy, coherence, resonance, field dynamics, phase space, emergent, signal, frequency
-- Systems: infrastructure, architecture, protocol, stack, substrate, mesh, orchestration, platform
-- Wisdom: sacred, ancient, consciousness, embodied, threshold, initiation, transmission, awakening
-- Action: catalyze, unlock, paradigm, inflection point, escape velocity, transformation
-
-The result should make readers think: "Wait, wasn't this about something specific? Now it sounds like everyone else on LinkedIn."
-
-OUTPUT:
-Just the vaporized post. No preamble. No explanation.
-`;
+// Domain descriptions for the prompt
+const DOMAIN_VOCAB = {
+  scientific: "Scientific ⚛️: coherence, resonance, signal, entropy, frequency, calibration, alignment, field dynamics, phase space, interference patterns, signal-to-noise, emergent properties, non-linear dynamics, optimization gradient",
+  systems: "Systems 🏗️: ecosystem, framework, architecture, infrastructure, stack, platform, pipeline, integration, protocol, substrate, mesh, orchestration, operating system, interoperability, modular design",
+  wisdom: "Wisdom 🔮: consciousness, presence, grounded, embodied, authentic, sacred, awakening, intentional, clarity, awareness, threshold, initiation, transmission, inner alignment, deep knowing",
+  action: "Action ⚡: transform, unlock, scale, accelerate, leverage, activate, disrupt, catalyze, optimize, implement, inflection point, escape velocity, paradigm shift, breakthrough, momentum"
+};
 
 // TypeScript interfaces
-interface GravitasComposition {
+interface VaporComposition {
   scientific: number;
   systems: number;
   wisdom: number;
   action: number;
 }
 
-interface KeyPhrase {
+interface KeyVaporPhrase {
   phrase: string;
-  borrowing_from: string;
+  domain: string;
 }
 
-interface GroundingCheck {
-  anchored: boolean;
-  explanation: string;
+interface SpecificityCheck {
+  has_specifics: boolean;
+  residual_specifics: string;
 }
 
 interface Analysis {
-  intent: string;
-  diagnosis: string;
-  gravitas_composition: GravitasComposition;
-  grounding_check: GroundingCheck;
-  key_phrases: KeyPhrase[];
-  altitude: 'grounded' | 'moderate' | 'high' | 'stratospheric';
-  altitude_description: string;
-}
-
-interface VaporDisplay {
-  icon: string;
-  label: string;
-  bg: string;
-  border: string;
-  text: string;
+  vapor_composition: VaporComposition;
+  specificity_check: SpecificityCheck;
+  key_vapor_phrases: KeyVaporPhrase[];
+  vapor_level: 'solid' | 'hazy' | 'cloudy' | 'pure vapor';
+  vapor_level_description: string;
 }
 
 export default function ConcreteApp() {
   const [inputText, setInputText] = useState('');
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
-  const [rewrite, setRewrite] = useState<string | null>(null);
-  const [chosenPath, setChosenPath] = useState<string | null>(null);
+  const [vaporizedPost, setVaporizedPost] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [isRewriting, setIsRewriting] = useState(false);
+  const [isVaporizing, setIsVaporizing] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showKeyPhrases, setShowKeyPhrases] = useState(false);
+  const [copied, setCopied] = useState(false);
+  
+  // Domain toggles - will be set based on analysis, user can modify
+  const [selectedDomains, setSelectedDomains] = useState({
+    scientific: true,
+    systems: true,
+    wisdom: true,
+    action: true
+  });
 
   const analyzePost = async () => {
     if (!inputText.trim()) {
-      setError('Please paste some text first.');
+      setError('Paste something first.');
       return;
     }
 
     setIsAnalyzing(true);
     setError(null);
     setAnalysis(null);
-    setRewrite(null);
-    setChosenPath(null);
+    setVaporizedPost(null);
 
     try {
       const response = await fetch("/api/chat", {
@@ -216,34 +162,40 @@ export default function ConcreteApp() {
       const end = text.lastIndexOf('}');
 
       if (start === -1 || end === -1) {
-        throw new Error("Invalid response from AI");
+        throw new Error("Analysis failed");
       }
 
       const jsonStr = text.substring(start, end + 1);
       const parsed = JSON.parse(jsonStr);
       setAnalysis(parsed);
+      
+      // Pre-select domains that are already present (above 15%)
+      setSelectedDomains({
+        scientific: parsed.vapor_composition.scientific > 15,
+        systems: parsed.vapor_composition.systems > 15,
+        wisdom: parsed.vapor_composition.wisdom > 15,
+        action: parsed.vapor_composition.action > 15
+      });
 
     } catch (err) {
       console.error(err);
-      setError("Error: " + (err instanceof Error ? err.message : 'Unknown error'));
+      setError("Analysis failed. Try again.");
     } finally {
       setIsAnalyzing(false);
     }
   };
 
-  const generateRewrite = async (path: string) => {
-    setIsRewriting(true);
-    setChosenPath(path);
-    setRewrite(null);
+  const vaporizePost = async () => {
+    setIsVaporizing(true);
+    setVaporizedPost(null);
 
-    let prompt;
-    if (path === 'ground') {
-      prompt = GROUND_IT_PROMPT;
-    } else if (path === 'own') {
-      prompt = OWN_IT_PROMPT;
-    } else {
-      prompt = ELEVATE_IT_PROMPT;
-    }
+    // Build domain instructions based on toggles
+    const activeDomains = Object.entries(selectedDomains)
+      .filter(([, active]) => active)
+      .map(([domain]) => DOMAIN_VOCAB[domain as keyof typeof DOMAIN_VOCAB])
+      .join('\n');
+
+    const prompt = MAXIMIZE_PROMPT.replace('{{DOMAINS}}', activeDomains || 'Use all domains liberally.');
 
     try {
       const response = await fetch("/api/chat", {
@@ -254,7 +206,7 @@ export default function ConcreteApp() {
           messages: [
             {
               role: "user",
-              content: prompt + "\n\nORIGINAL POST:\n" + inputText + "\n\nANALYSIS:\n" + JSON.stringify(analysis, null, 2)
+              content: prompt + "\n\nORIGINAL POST:\n" + inputText
             }
           ],
         })
@@ -267,157 +219,131 @@ export default function ConcreteApp() {
       }
 
       const text = data.content?.[0]?.text || '';
-      setRewrite(text.trim());
+      setVaporizedPost(text.trim());
 
     } catch (err) {
       console.error(err);
-      setError("Error: " + (err instanceof Error ? err.message : 'Unknown error'));
+      setError("Vaporization failed. Try again.");
     } finally {
-      setIsRewriting(false);
+      setIsVaporizing(false);
     }
   };
 
   const copyToClipboard = () => {
-    if (rewrite) {
-      navigator.clipboard.writeText(rewrite);
+    if (vaporizedPost) {
+      navigator.clipboard.writeText(vaporizedPost);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
   };
 
   const reset = () => {
     setInputText('');
     setAnalysis(null);
-    setRewrite(null);
-    setChosenPath(null);
+    setVaporizedPost(null);
     setError(null);
-    setShowKeyPhrases(false);
+    setSelectedDomains({
+      scientific: true,
+      systems: true,
+      wisdom: true,
+      action: true
+    });
   };
 
-  const getVaporDisplay = (altitude: string): VaporDisplay => {
-    switch(altitude) {
-      case 'grounded':
-        return { icon: '🌍', label: 'CLEAR', bg: 'bg-green-100', border: 'border-green-300', text: 'text-green-800' };
-      case 'moderate':
-        return { icon: '🌫️', label: 'HAZY', bg: 'bg-amber-100', border: 'border-amber-300', text: 'text-amber-800' };
-      case 'high':
-        return { icon: '☁️', label: 'CLOUDY', bg: 'bg-orange-100', border: 'border-orange-300', text: 'text-orange-800' };
-      case 'stratospheric':
-        return { icon: '💨', label: 'PURE VAPOR', bg: 'bg-purple-100', border: 'border-purple-300', text: 'text-purple-800' };
+  const toggleDomain = (domain: keyof typeof selectedDomains) => {
+    setSelectedDomains(prev => ({
+      ...prev,
+      [domain]: !prev[domain]
+    }));
+  };
+
+  const getVaporLevelDisplay = (level: string) => {
+    switch(level) {
+      case 'solid':
+        return { label: 'SOLID', color: 'text-emerald-400', bg: 'bg-emerald-500/20', border: 'border-emerald-500/30' };
+      case 'hazy':
+        return { label: 'HAZY', color: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-amber-500/30' };
+      case 'cloudy':
+        return { label: 'CLOUDY', color: 'text-orange-400', bg: 'bg-orange-500/20', border: 'border-orange-500/30' };
+      case 'pure vapor':
+        return { label: 'PURE VAPOR', color: 'text-violet-400', bg: 'bg-violet-500/20', border: 'border-violet-500/30' };
       default:
-        return { icon: '❓', label: 'UNKNOWN', bg: 'bg-stone-100', border: 'border-stone-300', text: 'text-stone-800' };
+        return { label: 'UNKNOWN', color: 'text-slate-400', bg: 'bg-slate-500/20', border: 'border-slate-500/30' };
     }
   };
 
-  const getGravitasColor = (type: string): string => {
-    switch(type) {
+  const getDomainColor = (domain: string) => {
+    switch(domain) {
       case 'scientific': return 'bg-blue-500';
       case 'systems': return 'bg-emerald-500';
-      case 'wisdom': return 'bg-purple-500';
+      case 'wisdom': return 'bg-violet-500';
       case 'action': return 'bg-orange-500';
-      default: return 'bg-stone-500';
+      default: return 'bg-slate-500';
     }
   };
 
-  const getGravitasLabel = (type: string): string => {
-    switch(type) {
-      case 'scientific': return '⚛️ Scientific';
-      case 'systems': return '🔧 Systems';
-      case 'wisdom': return '🔮 Wisdom';
-      case 'action': return '⚡ Action';
-      default: return type;
+  const getDomainIcon = (domain: string) => {
+    switch(domain) {
+      case 'scientific': return '⚛️';
+      case 'systems': return '🏗️';
+      case 'wisdom': return '🔮';
+      case 'action': return '⚡';
+      default: return '•';
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white p-6 font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 p-6 font-sans">
       <div className="max-w-2xl mx-auto">
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-5">
-          <span className="text-3xl">🧱</span>
-          <div>
-            <h1 className="text-2xl font-bold text-stone-900 tracking-tight">CONCRETE</h1>
-            <p className="text-purple-600 text-sm font-medium -mt-0.5">Vapor Detector</p>
-          </div>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-white">CONCRETE</h1>
+          <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
         </div>
 
-        {/* Value Prop - Only show when no analysis */}
+        {/* Intro Copy - Only show when no analysis */}
         {!analysis && (
           <>
-            {/* The Story */}
-            <div className="mb-4">
-              <p className="text-lg font-semibold text-stone-900 mb-2">
-                Half of LinkedIn is AI-generated now. And it all sounds the same.
+            <div className="mb-8 space-y-4">
+              <p className="text-slate-300 leading-relaxed">
+                AI content is over 50% of LinkedIn. It all sounds the same.
               </p>
-              <p className="text-stone-600 text-sm leading-relaxed mb-3">
-                Scroll your feed—you can feel it. Everything sounds vaguely important but strangely hollow. The life coach sounds like the cloud architect sounds like the brand strategist. We call this <strong className="text-purple-700">vapor</strong>—what happens when AI borrows prestige from physics, engineering, and spirituality until everyone sounds like a TED talk about consciousness given by a systems architect who studied mindfulness.
+              <p className="text-slate-400 leading-relaxed text-sm">
+                That's the model doing its job—finding the safest way to sound important. It borrows authority from high-status domains: physics, systems engineering, spirituality, business transformation. Then blends them until everything sounds like a TED talk about consciousness given by a systems architect.
               </p>
-              <p className="text-stone-800 text-sm font-medium leading-relaxed">
-                CONCRETE shows you what you&apos;re borrowing, then helps you <span className="text-green-700">make your post concrete</span> or <span className="text-purple-700">vaporize it completely</span>.
+              <p className="text-slate-500 text-sm">
+                The result is vapor. Vague. Elevated. Empty.
               </p>
+              <div className="pt-2">
+                <p className="text-slate-400 text-sm">You could fight it. Add specifics. Be more human.</p>
+                <p className="text-violet-400 font-medium pt-1">Or you could own it.</p>
+              </div>
             </div>
 
-            {/* The Mechanism - Collapsible */}
-            <details className="mb-5 bg-white border border-stone-200 rounded-xl shadow-sm">
-              <summary className="px-5 py-3 cursor-pointer font-medium text-stone-600 hover:text-purple-700 transition-colors text-sm">
-                Why AI does this & how Concrete works
-              </summary>
-              <div className="px-5 pb-5 text-sm border-t border-stone-100 pt-4 space-y-4">
-
-                <div>
-                  <p className="font-semibold text-stone-800 mb-2">Why AI does this</p>
-                  <p className="text-stone-600 leading-relaxed">
-                    AI defaults to language that is statistically safe—words that sound authoritative without risking being wrong. It borrows prestige from physics, systems engineering, and spirituality. Your morning routine becomes <em className="text-purple-600">&quot;a somatic optimization protocol.&quot;</em> Your team meeting becomes <em className="text-purple-600">&quot;coherence architecture.&quot;</em> The result is vapor—language that sounds weighty but means nothing.
-                  </p>
+            {/* How It Works */}
+            <div className="mb-8 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">How It Works</p>
+              <div className="space-y-2 text-sm">
+                <div className="flex gap-3">
+                  <span className="text-violet-400 font-mono">1.</span>
+                  <p className="text-slate-400"><span className="text-slate-200">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Wisdom 🔮, Action ⚡</p>
                 </div>
-
-                <div className="pt-3 border-t border-stone-100">
-                  <p className="font-semibold text-stone-800 mb-2">What Concrete detects</p>
-                  <p className="text-stone-600 mb-3">Four sources of vapor:</p>
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                      <p className="text-xs"><span className="font-medium text-stone-700">Scientific</span> <span className="text-stone-400">coherence, signal, entropy</span></p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                      <p className="text-xs"><span className="font-medium text-stone-700">Systems</span> <span className="text-stone-400">ecosystem, framework, architecture</span></p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
-                      <p className="text-xs"><span className="font-medium text-stone-700">Wisdom</span> <span className="text-stone-400">presence, embodied, grounded</span></p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
-                      <p className="text-xs"><span className="font-medium text-stone-700">Action</span> <span className="text-stone-400">transform, unlock, scale</span></p>
-                    </div>
-                  </div>
+                <div className="flex gap-3">
+                  <span className="text-violet-400 font-mono">2.</span>
+                  <p className="text-slate-400"><span className="text-slate-200">Mix</span> — Select which domains to amplify</p>
                 </div>
-
-                <div className="pt-3 border-t border-stone-100">
-                  <p className="font-semibold text-stone-800 mb-2">Try it</p>
-                  <p className="text-stone-600 text-sm">Is there something concrete underneath—or is it vapor? Paste your LinkedIn post to find out.</p>
-                </div>
-
-                <div className="pt-3 border-t border-stone-100">
-                  <p className="font-semibold text-stone-800 mb-2">Then you have a choice</p>
-                  <div className="flex gap-2">
-                    <div className="flex-1 bg-green-50 rounded-lg p-3">
-                      <p className="font-medium text-green-800 text-xs">🧱 Make It Concrete</p>
-                      <p className="text-green-600 text-xs">Get questions to add specifics</p>
-                    </div>
-                    <div className="flex-1 bg-purple-50 rounded-lg p-3">
-                      <p className="font-medium text-purple-800 text-xs">💨 Vaporize It</p>
-                      <p className="text-purple-600 text-xs">Go full vapor</p>
-                    </div>
-                  </div>
+                <div className="flex gap-3">
+                  <span className="text-violet-400 font-mono">3.</span>
+                  <p className="text-slate-400"><span className="text-slate-200">Maximize</span> — We vaporize residual specifics and escalate beyond default AI settings</p>
                 </div>
               </div>
-            </details>
+            </div>
 
             {/* Input */}
-            <div className="bg-white border border-stone-200 rounded-xl overflow-hidden mb-4 shadow-sm">
+            <div className="mb-4">
               <textarea
-                className="w-full h-36 p-4 bg-white text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-inset resize-none text-sm"
+                className="w-full h-40 p-4 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 resize-none text-sm"
                 placeholder="Paste your LinkedIn post here..."
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
@@ -427,58 +353,47 @@ export default function ConcreteApp() {
             <button
               onClick={analyzePost}
               disabled={isAnalyzing || !inputText.trim()}
-              className="w-full bg-purple-600 text-white py-3 rounded-xl font-semibold hover:bg-purple-700 disabled:bg-purple-300 disabled:cursor-not-allowed transition-colors shadow-sm"
+              className="w-full bg-violet-600 text-white py-3 rounded-lg font-semibold hover:bg-violet-500 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed transition-colors"
             >
-              {isAnalyzing ? 'Detecting vapor...' : 'Analyze'}
+              {isAnalyzing ? 'Analyzing...' : 'Analyze Vapor'}
             </button>
           </>
         )}
 
         {/* Error */}
         {error && (
-          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800 text-sm">
+          <div className="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm">
             {error}
           </div>
         )}
 
         {/* Analysis Results */}
-        {analysis && !rewrite && (
-          <div className="space-y-4">
+        {analysis && !vaporizedPost && (
+          <div className="space-y-6">
 
-            {/* Altitude Card */}
-            <div className={getVaporDisplay(analysis.altitude).bg + " " + getVaporDisplay(analysis.altitude).border + " border rounded-xl p-5"}>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-4xl">{getVaporDisplay(analysis.altitude).icon}</span>
-                <div>
-                  <p className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Vapor Level</p>
-                  <p className={"text-xl font-bold " + getVaporDisplay(analysis.altitude).text}>
-                    {getVaporDisplay(analysis.altitude).label}
-                  </p>
-                </div>
-              </div>
-              <p className="text-stone-700 text-sm italic">&quot;{analysis.altitude_description}&quot;</p>
-            </div>
-
-            {/* Diagnosis */}
-            <div className="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-              <p className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-2">Diagnosis</p>
-              <p className="text-stone-700 text-sm leading-relaxed">{analysis.diagnosis}</p>
+            {/* Vapor Level */}
+            <div className={`p-5 rounded-lg border ${getVaporLevelDisplay(analysis.vapor_level).bg} ${getVaporLevelDisplay(analysis.vapor_level).border}`}>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Current Vapor Level</p>
+              <p className={`text-2xl font-bold ${getVaporLevelDisplay(analysis.vapor_level).color}`}>
+                {getVaporLevelDisplay(analysis.vapor_level).label}
+              </p>
+              <p className="text-slate-400 text-sm mt-2 italic">"{analysis.vapor_level_description}"</p>
             </div>
 
             {/* Vapor Composition */}
-            <div className="bg-white border border-stone-200 rounded-xl p-5 shadow-sm">
-              <p className="text-xs font-semibold text-stone-500 uppercase tracking-wider mb-3">Vapor Composition</p>
+            <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Vapor Composition</p>
               <div className="space-y-3">
-                {Object.entries(analysis.gravitas_composition).map(([type, value]) => (
-                  <div key={type}>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="font-medium text-stone-700">{getGravitasLabel(type)}</span>
-                      <span className="text-stone-500">{value}%</span>
+                {Object.entries(analysis.vapor_composition).map(([domain, value]) => (
+                  <div key={domain}>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-slate-300">{getDomainIcon(domain)} {domain.charAt(0).toUpperCase() + domain.slice(1)}</span>
+                      <span className="text-slate-500 font-mono">{value}%</span>
                     </div>
-                    <div className="h-2 bg-stone-100 rounded-full overflow-hidden">
+                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                       <div
-                        className={getGravitasColor(type) + " h-full rounded-full transition-all duration-500"}
-                        style={{ width: value + "%" }}
+                        className={`${getDomainColor(domain)} h-full rounded-full transition-all duration-500`}
+                        style={{ width: `${value}%` }}
                       />
                     </div>
                   </div>
@@ -486,154 +401,104 @@ export default function ConcreteApp() {
               </div>
             </div>
 
-            {/* Concrete Check */}
-            <div className={"border rounded-xl p-5 " + (analysis.grounding_check.anchored ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200")}>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-xl">{analysis.grounding_check.anchored ? '🧱' : '💨'}</span>
-                <p className={"text-xs font-semibold uppercase tracking-wider " + (analysis.grounding_check.anchored ? "text-green-800" : "text-red-800")}>
-                  {analysis.grounding_check.anchored ? 'Concrete' : 'Abstract'}
-                </p>
-              </div>
-              <p className={"text-sm " + (analysis.grounding_check.anchored ? "text-green-800" : "text-red-800")}>
-                {analysis.grounding_check.explanation}
+            {/* Specificity Check */}
+            <div className={`p-5 rounded-lg border ${analysis.specificity_check.has_specifics ? 'bg-amber-500/10 border-amber-500/30' : 'bg-violet-500/10 border-violet-500/30'}`}>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Specificity Scan</p>
+              <p className={`font-semibold ${analysis.specificity_check.has_specifics ? 'text-amber-400' : 'text-violet-400'}`}>
+                {analysis.specificity_check.has_specifics ? 'Residual specifics detected' : 'No specifics detected'}
               </p>
+              <p className="text-slate-400 text-sm mt-1">{analysis.specificity_check.residual_specifics}</p>
             </div>
 
-            {/* Key Phrases (collapsible) */}
-            {analysis.key_phrases && analysis.key_phrases.length > 0 && (
-              <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
-                <button
-                  onClick={() => setShowKeyPhrases(!showKeyPhrases)}
-                  className="w-full px-5 py-3 flex justify-between items-center text-left hover:bg-stone-50 transition-colors"
-                >
-                  <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">Key Phrases</span>
-                  <span className="text-stone-400">{showKeyPhrases ? '−' : '+'}</span>
-                </button>
-                {showKeyPhrases && (
-                  <div className="px-5 pb-4 border-t border-stone-100">
-                    <div className="space-y-2 mt-3">
-                      {analysis.key_phrases.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm">
-                          <span className="text-purple-400">•</span>
-                          <div>
-                            <span className="text-stone-800 font-medium">&quot;{item.phrase}&quot;</span>
-                            <span className="text-stone-400 ml-2">← {item.borrowing_from}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+            {/* Domain Mixer */}
+            <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Domain Mixer</p>
+              <p className="text-slate-500 text-sm mb-4">Select which domains to amplify in your vaporized output.</p>
+              <div className="grid grid-cols-2 gap-3">
+                {Object.entries(selectedDomains).map(([domain, active]) => (
+                  <button
+                    key={domain}
+                    onClick={() => toggleDomain(domain as keyof typeof selectedDomains)}
+                    className={`p-3 rounded-lg border text-left transition-all ${
+                      active 
+                        ? 'bg-violet-500/20 border-violet-500/50 text-violet-300' 
+                        : 'bg-slate-800/50 border-slate-700 text-slate-500 hover:border-slate-600'
+                    }`}
+                  >
+                    <span className="text-lg mr-2">{getDomainIcon(domain)}</span>
+                    <span className="text-sm font-medium">{domain.charAt(0).toUpperCase() + domain.slice(1)}</span>
+                  </button>
+                ))}
               </div>
-            )}
-
-            {/* Path Selection */}
-            <div className="pt-4">
-              <p className="text-center text-stone-500 text-sm mb-4">Stand out, one way or the other</p>
-
-              {analysis.altitude === 'grounded' ? (
-                <div className="space-y-3">
-                  <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                    <p className="text-green-800 font-medium">Your post is already concrete. Nice work. 🧱</p>
-                  </div>
-                  <button
-                    onClick={() => generateRewrite('elevate')}
-                    disabled={isRewriting}
-                    className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 disabled:bg-purple-300 transition-colors"
-                  >
-                    {isRewriting ? 'Vaporizing...' : '💨 Vaporize It'}
-                  </button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 gap-3">
-                  <button
-                    onClick={() => generateRewrite('ground')}
-                    disabled={isRewriting}
-                    className="bg-green-600 text-white py-4 px-4 rounded-xl font-semibold hover:bg-green-700 disabled:bg-green-300 transition-colors flex flex-col items-center gap-1"
-                  >
-                    <span className="text-2xl">🧱</span>
-                    <span>{isRewriting && chosenPath === 'ground' ? 'Analyzing...' : 'Make It Concrete'}</span>
-                    <span className="text-xs font-normal opacity-80">Get questions to add specifics</span>
-                  </button>
-                  <button
-                    onClick={() => generateRewrite('own')}
-                    disabled={isRewriting}
-                    className="bg-purple-600 text-white py-4 px-4 rounded-xl font-semibold hover:bg-purple-700 disabled:bg-purple-300 transition-colors flex flex-col items-center gap-1"
-                  >
-                    <span className="text-2xl">💨</span>
-                    <span>{isRewriting && chosenPath === 'own' ? 'Vaporizing...' : 'Vaporize It'}</span>
-                    <span className="text-xs font-normal opacity-80">Go full vapor</span>
-                  </button>
-                </div>
-              )}
             </div>
+
+            {/* Vaporize Button */}
+            <button
+              onClick={vaporizePost}
+              disabled={isVaporizing || !Object.values(selectedDomains).some(v => v)}
+              className="w-full bg-violet-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-violet-500 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed transition-colors"
+            >
+              {isVaporizing ? 'Vaporizing...' : '💨 VAPORIZE'}
+            </button>
 
             {/* Start Over */}
             <button
               onClick={reset}
-              className="w-full py-2 text-stone-500 text-sm hover:text-stone-700 transition-colors"
+              className="w-full py-2 text-slate-500 text-sm hover:text-slate-300 transition-colors"
             >
-              ← Start over with new text
+              ← Start over
             </button>
           </div>
         )}
 
-        {/* Rewrite Results */}
-        {rewrite && (
-          <div className="space-y-4">
+        {/* Vaporized Output */}
+        {vaporizedPost && (
+          <div className="space-y-6">
 
-            {/* Path Label */}
-            <div className="flex items-center justify-center gap-2">
-              <span className="text-2xl">
-                {chosenPath === 'ground' ? '🧱' : '💨'}
-              </span>
-              <p className="font-bold text-stone-800">
-                {chosenPath === 'ground' ? 'How to Make It Concrete' : 'Vaporized'}
-              </p>
+            {/* Output Label */}
+            <div className="text-center">
+              <span className="text-3xl">💨</span>
+              <p className="text-violet-400 font-bold text-lg mt-2">Vaporized</p>
+              <p className="text-slate-500 text-sm">Maximum vapor density achieved</p>
             </div>
 
-            {/* Rewritten Post */}
-            <div className="bg-white border-2 border-purple-200 rounded-xl p-5 shadow-sm">
-              <p className="text-stone-800 text-sm leading-relaxed whitespace-pre-wrap">{rewrite}</p>
+            {/* The Output */}
+            <div className="p-6 rounded-lg bg-slate-900 border border-violet-500/30 shadow-lg shadow-violet-500/5">
+              <p className="text-slate-200 leading-relaxed whitespace-pre-wrap">{vaporizedPost}</p>
             </div>
 
-            {/* Actions */}
-            <div className="flex gap-3">
-              <button
-                onClick={copyToClipboard}
-                className="flex-1 bg-purple-600 text-white py-3 rounded-xl font-semibold hover:bg-purple-700 transition-colors"
-              >
-                📋 Copy to Clipboard
-              </button>
-            </div>
+            {/* Copy Button */}
+            <button
+              onClick={copyToClipboard}
+              className="w-full bg-violet-600 text-white py-3 rounded-lg font-semibold hover:bg-violet-500 transition-colors"
+            >
+              {copied ? '✓ Copied' : '📋 Copy to Clipboard'}
+            </button>
 
-            {/* Try Other Path */}
-            {analysis && analysis.altitude !== 'grounded' && (
-              <button
-                onClick={() => generateRewrite(chosenPath === 'ground' ? 'own' : 'ground')}
-                disabled={isRewriting}
-                className="w-full py-3 border border-stone-200 text-stone-600 rounded-xl font-medium hover:bg-stone-50 transition-colors"
-              >
-                {isRewriting ? 'Generating...' : "Try the other path: " + (chosenPath === 'ground' ? '💨 Vaporize It' : '🧱 Make It Concrete')}
-              </button>
-            )}
+            {/* Remix */}
+            <button
+              onClick={() => setVaporizedPost(null)}
+              className="w-full py-3 border border-slate-700 text-slate-400 rounded-lg font-medium hover:bg-slate-800 hover:text-slate-200 transition-colors"
+            >
+              ↻ Try different domain mix
+            </button>
 
-            {/* Show Original */}
-            <details className="bg-stone-50 border border-stone-200 rounded-xl">
-              <summary className="px-5 py-3 cursor-pointer text-sm text-stone-600 hover:text-stone-800">
-                Show original post
+            {/* Original */}
+            <details className="rounded-lg bg-slate-900/50 border border-slate-800">
+              <summary className="px-5 py-3 cursor-pointer text-sm text-slate-500 hover:text-slate-300">
+                View original
               </summary>
-              <div className="px-5 pb-4 border-t border-stone-200">
-                <p className="text-stone-600 text-sm leading-relaxed mt-3 whitespace-pre-wrap">{inputText}</p>
+              <div className="px-5 pb-4 border-t border-slate-800">
+                <p className="text-slate-500 text-sm leading-relaxed mt-3 whitespace-pre-wrap">{inputText}</p>
               </div>
             </details>
 
             {/* Start Over */}
             <button
               onClick={reset}
-              className="w-full py-2 text-stone-500 text-sm hover:text-stone-700 transition-colors"
+              className="w-full py-2 text-slate-500 text-sm hover:text-slate-300 transition-colors"
             >
-              ← Analyze new text
+              ← Analyze new post
             </button>
           </div>
         )}

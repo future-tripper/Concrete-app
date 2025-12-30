@@ -624,6 +624,9 @@ export default function ConcreteApp() {
           <p className="text-slate-600 text-xs">
             A Future Tripping production · Contact <a href="mailto:dazookajoe@gmail.com" className="text-slate-500 hover:text-violet-400 transition-colors">Joe DeLuca</a>
           </p>
+          <p className="text-slate-700 text-xs mt-2">
+            Text is processed via Claude API and not stored.
+          </p>
         </div>
 
       </div>

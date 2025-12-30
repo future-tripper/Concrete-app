@@ -379,7 +379,7 @@ export default function ConcreteApp() {
                 AI tools do this by borrowing authority from high-status domains: physics, systems, spirituality, and ethics. Then blends them until everything sounds like a TED talk about consciousness written by a systems architect.
               </p>
               <p className="text-sm">
-                <span className="text-violet-400">The result is vapor.</span> <span className="text-slate-400">Vague. Elevated. Empty.</span>
+                <span className="text-violet-400">The result is vapor.</span> <span className="text-slate-200">Vague. Elevated. Empty.</span>
               </p>
               <p className="text-slate-300 text-sm">
                 You could fight it. Or you could <span className="text-violet-400 font-medium">own it</span>. Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.

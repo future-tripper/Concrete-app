@@ -361,19 +361,11 @@ export default function ConcreteApp() {
       <div className="max-w-2xl mx-auto">
 
         {/* Header */}
-        <div className="mb-8 flex items-start justify-between">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-white">
-              <span className="mr-2">💨</span>VAPORfy
-            </h1>
-            <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
-          </div>
-          <button
-            onClick={shareApp}
-            className="text-slate-400 hover:text-slate-200 text-sm transition-colors flex items-center gap-1"
-          >
-            {linkCopied ? '✓ Link copied' : '↗ Share'}
-          </button>
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-white">
+            <span className="mr-2">💨</span>VAPORfy
+          </h1>
+          <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
         </div>
 
         {/* Intro Copy - Only show when no analysis */}
@@ -622,7 +614,7 @@ export default function ConcreteApp() {
         {/* Footer */}
         <div className="mt-16 pt-6 border-t border-slate-800 text-center">
           <p className="text-slate-600 text-xs">
-            A Future Tripping production · Contact <a href="mailto:dazookajoe@gmail.com" className="text-slate-500 hover:text-violet-400 transition-colors">Joe DeLuca</a>
+            A Future Tripping production · Contact <a href="mailto:dazookajoe@gmail.com" className="text-violet-400 hover:text-violet-300 transition-colors">Joe DeLuca</a> · <button onClick={shareApp} className="text-violet-400 hover:text-violet-300 transition-colors">{linkCopied ? 'Link copied!' : 'Share'}</button>
           </p>
           <p className="text-slate-700 text-xs mt-2">
             Text is processed via Claude API and not stored.

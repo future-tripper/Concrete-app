@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CONCRETE — Vapor Maximization Platform",
+  title: "VAPORfy — Vapor Maximization Platform",
   description: "Analyze and amplify the vapor in your LinkedIn posts. Blend Scientific, Systems, Spiritual, and Moral domains for maximum authority.",
   openGraph: {
-    title: "CONCRETE",
+    title: "VAPORfy",
     description: "Vapor Maximization Platform",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "CONCRETE",
+    title: "VAPORfy",
     description: "Vapor Maximization Platform",
   },
 };

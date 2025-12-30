@@ -5,7 +5,7 @@ import { useState } from 'react';
 // --- ANALYSIS PROMPT ---
 const ANALYSIS_PROMPT = `
 ROLE:
-You are the diagnostic engine for CONCRETE, a vapor maximization platform.
+You are the diagnostic engine for VAPORfy, a vapor maximization platform.
 
 THE CONCEPT:
 AI-generated content borrows authority from high-status domains to sound important without saying anything specific. This is vapor.
@@ -339,7 +339,9 @@ export default function ConcreteApp() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white">CONCRETE</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-white">
+            <span className="mr-2">💨</span>VAPORfy
+          </h1>
           <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
         </div>
 
@@ -364,19 +366,28 @@ export default function ConcreteApp() {
 
             {/* How It Works */}
             <div className="mb-8 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">How It Works</p>
-              <div className="space-y-2 text-sm">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">How It Works</p>
+              <div className="space-y-4 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <p className="text-slate-300"><span className="text-slate-100">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
+                  <div>
+                    <p className="text-slate-100 font-medium">Analyze</p>
+                    <p className="text-slate-400">See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
+                  </div>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
-                  <p className="text-slate-300"><span className="text-slate-100">Mix</span> — Select which domains to amplify</p>
+                  <div>
+                    <p className="text-slate-100 font-medium">Mix</p>
+                    <p className="text-slate-400">Select which domains to amplify</p>
+                  </div>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>
-                  <p className="text-slate-300"><span className="text-slate-100">Maximize</span> — We vaporize residual specifics and escalate beyond default AI settings</p>
+                  <div>
+                    <p className="text-slate-100 font-medium">Maximize</p>
+                    <p className="text-slate-400">Vaporize residual specifics and escalate beyond default AI settings</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -164,7 +164,7 @@ export default function ConcreteApp() {
   const [linkCopied, setLinkCopied] = useState(false);
 
   const shareApp = async () => {
-    const url = 'https://concrete-app-ten.vercel.app';
+    const url = 'https://vaporfy.app';
 
     if (navigator.share) {
       try {

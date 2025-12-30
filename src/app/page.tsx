@@ -373,7 +373,10 @@ export default function ConcreteApp() {
           <>
             <div className="mb-8 space-y-4">
               <p className="text-slate-200 leading-relaxed">
-                AI-generated content makes up over 50% of LinkedIn posts. It all sounds the same.
+                AI-generated content makes up over 50% of LinkedIn posts.
+              </p>
+              <p className="text-slate-200 leading-relaxed">
+                It all sounds the same.
               </p>
               <p className="text-slate-300 leading-relaxed text-sm">
                 AI tools do this by borrowing authority from high-status domains: physics, systems, spirituality, and ethics. Then blends them until everything sounds like a TED talk about consciousness written by a systems architect.

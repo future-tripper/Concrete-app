@@ -381,9 +381,9 @@ export default function ConcreteApp() {
               <p className="text-slate-400 text-sm">
                 The result is vapor. Vague. Elevated. Empty.
               </p>
-              <div className="pt-2">
+              <div className="pt-2 space-y-2">
                 <p className="text-slate-300 text-sm">You could fight it. Add specifics. Be more human.</p>
-                <p className="text-violet-400 font-medium pt-1">Or you could own it.</p>
+                <p className="text-slate-300 text-sm">Or you could <span className="text-violet-400 font-medium">own it</span>. Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.</p>
               </div>
             </div>
 

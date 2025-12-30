@@ -68,6 +68,8 @@ CRITICAL RULES:
 
 6. COIN COMPOUND TERMS. "Coherence architecture." "Resonance infrastructure." "Embodied systems protocol." "Wisdom stack."
 
+7. DENSITY OVER LENGTH. Pack more vapor per sentence, not more sentences. Expansion is fine—bloat is not. Every line should carry maximum authority load.
+
 THINK:
 - A TED talk given by someone who achieved enlightenment while reading enterprise architecture documentation
 - A LinkedIn influencer who believes their calendar management is a spiritual practice

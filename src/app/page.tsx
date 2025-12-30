@@ -347,36 +347,36 @@ export default function ConcreteApp() {
         {!analysis && (
           <>
             <div className="mb-8 space-y-4">
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-slate-200 leading-relaxed">
                 AI content is over 50% of LinkedIn. It all sounds the same.
               </p>
-              <p className="text-slate-400 leading-relaxed text-sm">
+              <p className="text-slate-300 leading-relaxed text-sm">
                 That's the model doing its job—finding the safest way to sound important. It borrows authority from high-status domains: physics, systems engineering, spirituality, ethics. Then blends them until everything sounds like a TED talk about consciousness given by a systems architect.
               </p>
-              <p className="text-slate-500 text-sm">
+              <p className="text-slate-400 text-sm">
                 The result is vapor. Vague. Elevated. Empty.
               </p>
               <div className="pt-2">
-                <p className="text-slate-400 text-sm">You could fight it. Add specifics. Be more human.</p>
+                <p className="text-slate-300 text-sm">You could fight it. Add specifics. Be more human.</p>
                 <p className="text-violet-400 font-medium pt-1">Or you could own it.</p>
               </div>
             </div>
 
             {/* How It Works */}
             <div className="mb-8 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">How It Works</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">How It Works</p>
               <div className="space-y-2 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <p className="text-slate-400"><span className="text-slate-200">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
+                  <p className="text-slate-300"><span className="text-slate-100">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
-                  <p className="text-slate-400"><span className="text-slate-200">Mix</span> — Select which domains to amplify</p>
+                  <p className="text-slate-300"><span className="text-slate-100">Mix</span> — Select which domains to amplify</p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>
-                  <p className="text-slate-400"><span className="text-slate-200">Maximize</span> — We vaporize residual specifics and escalate beyond default AI settings</p>
+                  <p className="text-slate-300"><span className="text-slate-100">Maximize</span> — We vaporize residual specifics and escalate beyond default AI settings</p>
                 </div>
               </div>
             </div>
@@ -414,22 +414,22 @@ export default function ConcreteApp() {
 
             {/* Vapor Level */}
             <div className={`p-5 rounded-lg border ${getVaporLevelDisplay(analysis.vapor_level).bg} ${getVaporLevelDisplay(analysis.vapor_level).border}`}>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Current Vapor Level</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Current Vapor Level</p>
               <p className={`text-2xl font-bold ${getVaporLevelDisplay(analysis.vapor_level).color}`}>
                 {getVaporLevelDisplay(analysis.vapor_level).label}
               </p>
-              <p className="text-slate-400 text-sm mt-2 italic">"{analysis.vapor_level_description}"</p>
+              <p className="text-slate-300 text-sm mt-2 italic">"{analysis.vapor_level_description}"</p>
             </div>
 
             {/* Vapor Composition */}
             <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Vapor Composition</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Vapor Composition</p>
               <div className="space-y-3">
                 {Object.entries(analysis.vapor_composition).map(([domain, value]) => (
                   <div key={domain}>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-slate-300">{getDomainIcon(domain)} {domain.charAt(0).toUpperCase() + domain.slice(1)}</span>
-                      <span className="text-slate-500 font-mono">{value}%</span>
+                      <span className="text-slate-200">{getDomainIcon(domain)} {domain.charAt(0).toUpperCase() + domain.slice(1)}</span>
+                      <span className="text-slate-400 font-mono">{value}%</span>
                     </div>
                     <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
                       <div
@@ -444,17 +444,17 @@ export default function ConcreteApp() {
 
             {/* Specificity Check */}
             <div className={`p-5 rounded-lg border ${analysis.specificity_check.has_specifics ? 'bg-amber-500/10 border-amber-500/30' : 'bg-violet-500/10 border-violet-500/30'}`}>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Specificity Scan</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Specificity Scan</p>
               <p className={`font-semibold ${analysis.specificity_check.has_specifics ? 'text-amber-400' : 'text-violet-400'}`}>
                 {analysis.specificity_check.has_specifics ? 'Residual specifics detected' : 'No specifics detected'}
               </p>
-              <p className="text-slate-400 text-sm mt-1">{analysis.specificity_check.residual_specifics}</p>
+              <p className="text-slate-300 text-sm mt-1">{analysis.specificity_check.residual_specifics}</p>
             </div>
 
             {/* Domain Mixer */}
             <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Domain Mixer</p>
-              <p className="text-slate-500 text-sm mb-4">Select which domains to amplify in your vaporized output.</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Domain Mixer</p>
+              <p className="text-slate-400 text-sm mb-4">Select which domains to amplify in your vaporized output.</p>
               <div className="grid grid-cols-2 gap-3">
                 {Object.entries(selectedDomains).map(([domain, active]) => (
                   <button
@@ -477,18 +477,18 @@ export default function ConcreteApp() {
             <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Humble-Brag Booster 🤫</p>
+                  <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Humble-Brag Booster 🤫</p>
                   {analysis.quiet_signal?.detected ? (
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-slate-300 text-sm">
                       Quiet signal detected in your post. <span className="text-violet-400">Double down?</span> Internal data suggests humble-brag language multiplies engagement when combined with 2+ domains.
                     </p>
                   ) : (
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-slate-300 text-sm">
                       No quiet signal detected. <span className="text-violet-400">Add one?</span> Whispered truths carry more weight. Things don&apos;t happen—they &quot;quietly emerge.&quot;
                     </p>
                   )}
                   {analysis.quiet_signal?.detected && analysis.quiet_signal.examples.length > 0 && (
-                    <p className="text-slate-500 text-xs mt-2 italic">
+                    <p className="text-slate-400 text-xs mt-2 italic">
                       Found: {analysis.quiet_signal.examples.slice(0, 3).map(ex => `"${ex}"`).join(', ')}
                     </p>
                   )}
@@ -518,7 +518,7 @@ export default function ConcreteApp() {
             {/* Start Over */}
             <button
               onClick={reset}
-              className="w-full py-2 text-slate-500 text-sm hover:text-slate-300 transition-colors"
+              className="w-full py-2 text-slate-400 text-sm hover:text-slate-200 transition-colors"
             >
               ← Start over
             </button>
@@ -533,7 +533,7 @@ export default function ConcreteApp() {
             <div className="text-center">
               <span className="text-3xl">💨</span>
               <p className="text-violet-400 font-bold text-lg mt-2">Vaporized</p>
-              <p className="text-slate-500 text-sm">Maximum vapor density achieved</p>
+              <p className="text-slate-400 text-sm">Maximum vapor density achieved</p>
             </div>
 
             {/* The Output */}
@@ -559,18 +559,18 @@ export default function ConcreteApp() {
 
             {/* Original */}
             <details className="rounded-lg bg-slate-900/50 border border-slate-800">
-              <summary className="px-5 py-3 cursor-pointer text-sm text-slate-500 hover:text-slate-300">
+              <summary className="px-5 py-3 cursor-pointer text-sm text-slate-400 hover:text-slate-200">
                 View original
               </summary>
               <div className="px-5 pb-4 border-t border-slate-800">
-                <p className="text-slate-500 text-sm leading-relaxed mt-3 whitespace-pre-wrap">{inputText}</p>
+                <p className="text-slate-400 text-sm leading-relaxed mt-3 whitespace-pre-wrap">{inputText}</p>
               </div>
             </details>
 
             {/* Start Over */}
             <button
               onClick={reset}
-              className="w-full py-2 text-slate-500 text-sm hover:text-slate-300 transition-colors"
+              className="w-full py-2 text-slate-400 text-sm hover:text-slate-200 transition-colors"
             >
               ← Analyze new post
             </button>

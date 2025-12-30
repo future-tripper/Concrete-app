@@ -11,26 +11,31 @@ THE CONCEPT:
 AI-generated content borrows authority from high-status domains to sound important without saying anything specific. This is vapor.
 
 The four vapor domains:
-- Scientific: physics, neuroscience, data language (coherence, resonance, signal, entropy, frequency, calibration, alignment, optimization, interference, regulation)
-- Systems: engineering, architecture language (ecosystem, framework, architecture, infrastructure, stack, platform, pipeline, integration, layers, operating system)
-- Wisdom: spirituality, philosophy language (consciousness, presence, grounded, embodied, authentic, sacred, awakening, intentional, clarity, awareness)
-- Action: business transformation language (transform, unlock, scale, accelerate, leverage, activate, disrupt, catalyze, optimize, implement)
+- Scientific: physics, neuroscience, data language (coherence, resonance, signal, entropy, frequency, calibration, alignment, optimization, interference, regulation, phase, field dynamics)
+- Systems: engineering, architecture language (ecosystem, framework, architecture, infrastructure, stack, platform, pipeline, integration, layers, operating system, protocol, technology, mesh)
+- Spiritual: inner experience, contemplative language (consciousness, presence, grounded, embodied, authentic, sacred, awakening, intentional, clarity, awareness, wisdom, attunement, stillness)
+- Moral: ethics, stewardship language (stewardship, ethics, responsibility, meaning, care, custodianship, dignity, values, integrity, trust, accountability, purpose, service)
 
 YOUR TASK:
 Analyze the submitted post. Assess how much vapor it contains and from which domains.
 
-1. VAPOR COMPOSITION: What percentage of the post's authority comes from each domain? (should total 100 if vapor is present, or show low numbers if genuinely concrete)
+1. VAPOR COMPOSITION: What percentage of the post's authority comes from each domain? (should total roughly 100 if vapor is present, or show low numbers if genuinely concrete)
+
 2. SPECIFICITY CHECK: Does the post contain concrete details (names, numbers, examples, specific tools, actual events)? Or is it abstraction all the way down?
+
 3. KEY VAPOR PHRASES: Identify 3-5 phrases that best exemplify the vapor pattern
+
 4. VAPOR LEVEL: Rate overall vapor density (solid / hazy / cloudy / pure vapor)
+
+5. QUIET SIGNAL: Does the post use humble-brag language? Words like "quiet," "quietly," "subtle," "gently," "soft," "simple," "still." Phrases like "quietly emerged," "gentle reminder," "simple truth," "what silently underpins." This signals depth through restraint—whispered truths that imply louder voices are inferior.
 
 OUTPUT FORMAT (return ONLY valid JSON, no markdown):
 {
   "vapor_composition": {
     "scientific": 0-100,
     "systems": 0-100,
-    "wisdom": 0-100,
-    "action": 0-100
+    "spiritual": 0-100,
+    "moral": 0-100
   },
   "specificity_check": {
     "has_specifics": true or false,
@@ -40,7 +45,11 @@ OUTPUT FORMAT (return ONLY valid JSON, no markdown):
     {"phrase": "exact phrase from text", "domain": "which vapor domain"}
   ],
   "vapor_level": "solid or hazy or cloudy or pure vapor",
-  "vapor_level_description": "One deadpan sentence describing the current state"
+  "vapor_level_description": "One deadpan sentence describing the current state",
+  "quiet_signal": {
+    "detected": true or false,
+    "examples": ["list of quiet/humble-brag phrases found, or empty array if none"]
+  }
 }
 `;
 
@@ -55,25 +64,27 @@ Transform the post into peak vapor. Eliminate residual specificity. Escalate aut
 DOMAIN VOCABULARY TO INJECT:
 {{DOMAINS}}
 
+{{QUIET}}
+
 CRITICAL RULES:
-1. ELIMINATE SPECIFICS. Names become "key stakeholders." Numbers become "meaningful scale." Tools become "systems." Events become "inflection points."
+1. ELIMINATE SPECIFICS. Names become "key stakeholders." Numbers become "meaningful scale." Tools become "systems." Events become "inflection points." Dates become "a pivotal moment."
 
-2. BLEND DOMAINS IN EVERY SENTENCE. Don't just use one domain—fuse them. "The coherence architecture of embodied leadership." "Systemic resonance at the threshold of transformation."
+2. BLEND DOMAINS IN EVERY SENTENCE. Don't just use one domain—fuse them. "The coherence architecture of embodied leadership." "Systemic resonance at the threshold of ethical stewardship." "The moral infrastructure of authentic presence."
 
-3. ESCALATE AUTHORITY. Where the original says "I learned," say "The pattern revealed itself." Where it says "we did," say "what emerged was."
+3. ESCALATE AUTHORITY. Where the original says "I learned," say "The pattern revealed itself." Where it says "we did," say "what emerged was." Where it says "I think," say "what becomes clear is."
 
 4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths. Tuesday's meeting becomes "a phase transition in organizational consciousness."
 
 5. DEADPAN DELIVERY. Complete sincerity. No winking. No self-awareness. The post should sound like it means every word.
 
-6. COIN COMPOUND TERMS. "Coherence architecture." "Resonance infrastructure." "Embodied systems protocol." "Wisdom stack."
+6. COIN COMPOUND TERMS. "Coherence architecture." "Resonance infrastructure." "Embodied systems protocol." "Moral substrate." "Stewardship stack." "Wisdom infrastructure."
 
 7. DENSITY OVER LENGTH. Pack more vapor per sentence, not more sentences. Expansion is fine—bloat is not. Every line should carry maximum authority load.
 
 THINK:
 - A TED talk given by someone who achieved enlightenment while reading enterprise architecture documentation
 - A LinkedIn influencer who believes their calendar management is a spiritual practice
-- What would happen if a life coach and a cloud architect had a baby and that baby wrote manifestos
+- What would happen if a life coach, a cloud architect, and an ethics professor had a baby and that baby wrote manifestos
 
 OUTPUT:
 Just the vaporized post. No preamble. No explanation. No meta-commentary. Complete commitment.
@@ -81,18 +92,30 @@ Just the vaporized post. No preamble. No explanation. No meta-commentary. Comple
 
 // Domain descriptions for the prompt
 const DOMAIN_VOCAB = {
-  scientific: "Scientific ⚛️: coherence, resonance, signal, entropy, frequency, calibration, alignment, field dynamics, phase space, interference patterns, signal-to-noise, emergent properties, non-linear dynamics, optimization gradient",
-  systems: "Systems 🏗️: ecosystem, framework, architecture, infrastructure, stack, platform, pipeline, integration, protocol, substrate, mesh, orchestration, operating system, interoperability, modular design",
-  wisdom: "Wisdom 🔮: consciousness, presence, grounded, embodied, authentic, sacred, awakening, intentional, clarity, awareness, threshold, initiation, transmission, inner alignment, deep knowing",
-  action: "Action ⚡: transform, unlock, scale, accelerate, leverage, activate, disrupt, catalyze, optimize, implement, inflection point, escape velocity, paradigm shift, breakthrough, momentum"
+  scientific: "Scientific ⚛️: coherence, resonance, signal, entropy, frequency, calibration, alignment, field dynamics, phase, interference patterns, emergent properties, non-linear dynamics, optimization gradient",
+  systems: "Systems 🏗️: ecosystem, framework, architecture, infrastructure, stack, platform, protocol, technology, operating system, integration, layers, substrate, mesh, orchestration, interoperability",
+  spiritual: "Spiritual 🔮: presence, embodied, consciousness, grounded, awakening, sacred, wisdom, clarity, awareness, authentic, inner alignment, deep knowing, intuition, attunement, stillness",
+  moral: "Moral ⚖️: stewardship, ethics, responsibility, meaning, care, custodianship, dignity, values, integrity, trust, accountability, intention, purpose, service, commitment"
 };
+
+// Quiet/humble-brag instructions
+const QUIET_INSTRUCTIONS = `
+HUMBLE-BRAG SIGNAL:
+Signal depth through restraint. Whispered truths carry more weight than loud proclamations.
+- Use: "quiet," "quietly," "subtle," "gently," "soft," "simple," "still," "hushed," "unassuming"
+- Things don't happen—they "quietly emerge" or "gently surface"
+- Insights don't arrive—they "settle in" or "come into focus"
+- Frame loudness and urgency as inferior. Imply that those who get it don't need to shout.
+- The most profound shifts are "barely perceptible" yet "unmistakable"
+- Use phrases like: "a quiet truth," "what silently underpins," "the still point beneath"
+`;
 
 // TypeScript interfaces
 interface VaporComposition {
   scientific: number;
   systems: number;
-  wisdom: number;
-  action: number;
+  spiritual: number;
+  moral: number;
 }
 
 interface KeyVaporPhrase {
@@ -111,6 +134,10 @@ interface Analysis {
   key_vapor_phrases: KeyVaporPhrase[];
   vapor_level: 'solid' | 'hazy' | 'cloudy' | 'pure vapor';
   vapor_level_description: string;
+  quiet_signal: {
+    detected: boolean;
+    examples: string[];
+  };
 }
 
 export default function ConcreteApp() {
@@ -126,9 +153,12 @@ export default function ConcreteApp() {
   const [selectedDomains, setSelectedDomains] = useState({
     scientific: true,
     systems: true,
-    wisdom: true,
-    action: true
+    spiritual: true,
+    moral: true
   });
+
+  // Quiet/humble-brag booster
+  const [quietBooster, setQuietBooster] = useState(false);
 
   const analyzePost = async () => {
     if (!inputText.trim()) {
@@ -175,9 +205,12 @@ export default function ConcreteApp() {
       setSelectedDomains({
         scientific: parsed.vapor_composition.scientific > 15,
         systems: parsed.vapor_composition.systems > 15,
-        wisdom: parsed.vapor_composition.wisdom > 15,
-        action: parsed.vapor_composition.action > 15
+        spiritual: parsed.vapor_composition.spiritual > 15,
+        moral: parsed.vapor_composition.moral > 15
       });
+
+      // Set quiet booster based on detection
+      setQuietBooster(parsed.quiet_signal?.detected || false);
 
     } catch (err) {
       console.error(err);
@@ -197,7 +230,12 @@ export default function ConcreteApp() {
       .map(([domain]) => DOMAIN_VOCAB[domain as keyof typeof DOMAIN_VOCAB])
       .join('\n');
 
-    const prompt = MAXIMIZE_PROMPT.replace('{{DOMAINS}}', activeDomains || 'Use all domains liberally.');
+    // Build quiet section based on toggle
+    const quietSection = quietBooster ? QUIET_INSTRUCTIONS : '';
+
+    const prompt = MAXIMIZE_PROMPT
+      .replace('{{DOMAINS}}', activeDomains || 'Use all domains liberally.')
+      .replace('{{QUIET}}', quietSection);
 
     try {
       const response = await fetch("/api/chat", {
@@ -244,11 +282,12 @@ export default function ConcreteApp() {
     setAnalysis(null);
     setVaporizedPost(null);
     setError(null);
+    setQuietBooster(false);
     setSelectedDomains({
       scientific: true,
       systems: true,
-      wisdom: true,
-      action: true
+      spiritual: true,
+      moral: true
     });
   };
 
@@ -278,8 +317,8 @@ export default function ConcreteApp() {
     switch(domain) {
       case 'scientific': return 'bg-blue-500';
       case 'systems': return 'bg-emerald-500';
-      case 'wisdom': return 'bg-violet-500';
-      case 'action': return 'bg-orange-500';
+      case 'spiritual': return 'bg-violet-500';
+      case 'moral': return 'bg-amber-500';
       default: return 'bg-slate-500';
     }
   };
@@ -288,8 +327,8 @@ export default function ConcreteApp() {
     switch(domain) {
       case 'scientific': return '⚛️';
       case 'systems': return '🏗️';
-      case 'wisdom': return '🔮';
-      case 'action': return '⚡';
+      case 'spiritual': return '🔮';
+      case 'moral': return '⚖️';
       default: return '•';
     }
   };
@@ -312,7 +351,7 @@ export default function ConcreteApp() {
                 AI content is over 50% of LinkedIn. It all sounds the same.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm">
-                That's the model doing its job—finding the safest way to sound important. It borrows authority from high-status domains: physics, systems engineering, spirituality, business transformation. Then blends them until everything sounds like a TED talk about consciousness given by a systems architect.
+                That's the model doing its job—finding the safest way to sound important. It borrows authority from high-status domains: physics, systems engineering, spirituality, ethics. Then blends them until everything sounds like a TED talk about consciousness given by a systems architect.
               </p>
               <p className="text-slate-500 text-sm">
                 The result is vapor. Vague. Elevated. Empty.
@@ -329,7 +368,7 @@ export default function ConcreteApp() {
               <div className="space-y-2 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <p className="text-slate-400"><span className="text-slate-200">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Wisdom 🔮, Action ⚡</p>
+                  <p className="text-slate-400"><span className="text-slate-200">Analyze</span> — See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
@@ -422,8 +461,8 @@ export default function ConcreteApp() {
                     key={domain}
                     onClick={() => toggleDomain(domain as keyof typeof selectedDomains)}
                     className={`p-3 rounded-lg border text-left transition-all ${
-                      active 
-                        ? 'bg-violet-500/20 border-violet-500/50 text-violet-300' 
+                      active
+                        ? 'bg-violet-500/20 border-violet-500/50 text-violet-300'
                         : 'bg-slate-800/50 border-slate-700 text-slate-500 hover:border-slate-600'
                     }`}
                   >
@@ -431,6 +470,39 @@ export default function ConcreteApp() {
                     <span className="text-sm font-medium">{domain.charAt(0).toUpperCase() + domain.slice(1)}</span>
                   </button>
                 ))}
+              </div>
+            </div>
+
+            {/* Quiet Booster */}
+            <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Humble-Brag Booster 🤫</p>
+                  {analysis.quiet_signal?.detected ? (
+                    <p className="text-slate-400 text-sm">
+                      Quiet signal detected in your post. <span className="text-violet-400">Double down?</span> Internal data suggests humble-brag language multiplies engagement when combined with 2+ domains.
+                    </p>
+                  ) : (
+                    <p className="text-slate-400 text-sm">
+                      No quiet signal detected. <span className="text-violet-400">Add one?</span> Whispered truths carry more weight. Things don&apos;t happen—they &quot;quietly emerge.&quot;
+                    </p>
+                  )}
+                  {analysis.quiet_signal?.detected && analysis.quiet_signal.examples.length > 0 && (
+                    <p className="text-slate-500 text-xs mt-2 italic">
+                      Found: {analysis.quiet_signal.examples.slice(0, 3).map(ex => `"${ex}"`).join(', ')}
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={() => setQuietBooster(!quietBooster)}
+                  className={`flex-shrink-0 px-4 py-2 rounded-lg border text-sm font-medium transition-all ${
+                    quietBooster
+                      ? 'bg-violet-500/20 border-violet-500/50 text-violet-300'
+                      : 'bg-slate-800/50 border-slate-700 text-slate-500 hover:border-slate-600'
+                  }`}
+                >
+                  {quietBooster ? 'On' : 'Off'}
+                </button>
               </div>
             </div>
 

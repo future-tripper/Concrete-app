@@ -395,7 +395,7 @@ export default function ConcreteApp() {
               <div className="space-y-2 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <p><span className="text-slate-100 font-medium">Analyze.</span> <span className="text-slate-400">See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</span></p>
+                  <p><span className="text-slate-100 font-medium">Analyze.</span> <span className="text-slate-400">See your vapor composition</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
@@ -403,7 +403,7 @@ export default function ConcreteApp() {
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>
-                  <p><span className="text-slate-100 font-medium">Maximize.</span> <span className="text-slate-400">Vaporize residual specifics and escalate beyond default AI settings</span></p>
+                  <p><span className="text-slate-100 font-medium">Maximize.</span> <span className="text-slate-400">Eliminate specifics and escalate</span></p>
                 </div>
               </div>
             </div>

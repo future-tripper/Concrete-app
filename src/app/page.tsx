@@ -160,6 +160,29 @@ export default function ConcreteApp() {
   // Quiet/humble-brag booster
   const [quietBooster, setQuietBooster] = useState(false);
 
+  // Share link copied state
+  const [linkCopied, setLinkCopied] = useState(false);
+
+  const shareApp = async () => {
+    const url = 'https://concrete-app-ten.vercel.app';
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'VAPORfy',
+          text: 'Vapor Maximization Platform',
+          url: url,
+        });
+      } catch {
+        // User cancelled or error - ignore
+      }
+    } else {
+      await navigator.clipboard.writeText(url);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    }
+  };
+
   const analyzePost = async () => {
     if (!inputText.trim()) {
       setError('Paste something first.');
@@ -338,11 +361,19 @@ export default function ConcreteApp() {
       <div className="max-w-2xl mx-auto">
 
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white">
-            <span className="mr-2">💨</span>VAPORfy
-          </h1>
-          <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-white">
+              <span className="mr-2">💨</span>VAPORfy
+            </h1>
+            <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
+          </div>
+          <button
+            onClick={shareApp}
+            className="text-slate-400 hover:text-slate-200 text-sm transition-colors flex items-center gap-1"
+          >
+            {linkCopied ? '✓ Link copied' : '↗ Share'}
+          </button>
         </div>
 
         {/* Intro Copy - Only show when no analysis */}

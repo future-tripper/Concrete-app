@@ -373,18 +373,17 @@ export default function ConcreteApp() {
           <>
             <div className="mb-8 space-y-4">
               <p className="text-slate-200 leading-relaxed">
-                AI content is over 50% of LinkedIn. It all sounds the same.
+                AI-generated content makes up over 50% of LinkedIn posts. It all sounds the same.
               </p>
               <p className="text-slate-300 leading-relaxed text-sm">
-                That's the model doing its job—finding the safest way to sound important. It borrows authority from high-status domains: physics, systems engineering, spirituality, ethics. Then blends them until everything sounds like a TED talk about consciousness given by a systems architect.
+                AI tools do this by borrowing authority from high-status domains: physics, systems, spirituality, and ethics. Then blends them until everything sounds like a TED talk about consciousness written by a systems architect.
               </p>
-              <p className="text-slate-400 text-sm">
-                The result is vapor. Vague. Elevated. Empty.
+              <p className="text-sm">
+                <span className="text-violet-400">The result is vapor.</span> <span className="text-slate-400">Vague. Elevated. Empty.</span>
               </p>
-              <div className="pt-2 space-y-2">
-                <p className="text-slate-300 text-sm">You could fight it. Add specifics. Be more human.</p>
-                <p className="text-slate-300 text-sm">Or you could <span className="text-violet-400 font-medium">own it</span>. Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.</p>
-              </div>
+              <p className="text-slate-300 text-sm">
+                You could fight it. Or you could <span className="text-violet-400 font-medium">own it</span>. Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.
+              </p>
             </div>
 
             {/* How It Works */}

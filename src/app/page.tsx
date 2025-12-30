@@ -373,7 +373,7 @@ export default function ConcreteApp() {
           <>
             <div className="mb-8 space-y-4">
               <p className="text-slate-200 leading-relaxed">
-                AI-generated content makes up over 50% of LinkedIn posts.
+                Over 50% of LinkedIn posts are AI-generated.
               </p>
               <p className="text-slate-200 leading-relaxed">
                 It all sounds the same.

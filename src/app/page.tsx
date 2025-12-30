@@ -382,7 +382,10 @@ export default function ConcreteApp() {
                 <span className="text-violet-400">The result is vapor.</span> <span className="text-slate-200">Vague. Elevated. Empty.</span>
               </p>
               <p className="text-slate-300 text-sm">
-                You could fight it. Or you could <span className="text-violet-400 font-medium">own it</span>. Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.
+                You could fight it. Or you could <span className="text-violet-400 font-medium">own it</span>.
+              </p>
+              <p className="text-slate-300 text-sm">
+                Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.
               </p>
             </div>
 

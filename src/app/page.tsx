@@ -388,7 +388,7 @@ export default function ConcreteApp() {
                 You could fight it. Or you could <span className="text-violet-400 font-semibold">own it</span>.
               </p>
               <p className="text-slate-300 text-sm">
-                Paste your LinkedIn post below. We'll analyze its vapor composition and optimize it for enhanced professional visibility.
+                Paste your LinkedIn post below. We'll analyze its vapor composition and maximize it for enhanced professional visibility.
               </p>
             </div>
 

@@ -619,6 +619,13 @@ export default function ConcreteApp() {
           </div>
         )}
 
+        {/* Footer */}
+        <div className="mt-16 pt-6 border-t border-slate-800 text-center">
+          <p className="text-slate-600 text-xs">
+            A Future Tripping production · Contact <a href="mailto:dazookajoe@gmail.com" className="text-slate-500 hover:text-violet-400 transition-colors">Joe DeLuca</a>
+          </p>
+        </div>
+
       </div>
     </div>
   );

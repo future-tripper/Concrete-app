@@ -392,27 +392,18 @@ export default function ConcreteApp() {
             {/* How It Works */}
             <div className="mb-8 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">How It Works</p>
-              <div className="space-y-4 text-sm">
+              <div className="space-y-2 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <div>
-                    <p className="text-slate-100 font-medium">Analyze</p>
-                    <p className="text-slate-400">See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</p>
-                  </div>
+                  <p><span className="text-slate-100 font-medium">Analyze.</span> <span className="text-slate-400">See your vapor breakdown: Scientific ⚛️, Systems 🏗️, Spiritual 🔮, Moral ⚖️</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
-                  <div>
-                    <p className="text-slate-100 font-medium">Mix</p>
-                    <p className="text-slate-400">Select which domains to amplify</p>
-                  </div>
+                  <p><span className="text-slate-100 font-medium">Mix.</span> <span className="text-slate-400">Select which domains to amplify</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>
-                  <div>
-                    <p className="text-slate-100 font-medium">Maximize</p>
-                    <p className="text-slate-400">Vaporize residual specifics and escalate beyond default AI settings</p>
-                  </div>
+                  <p><span className="text-slate-100 font-medium">Maximize.</span> <span className="text-slate-400">Vaporize residual specifics and escalate beyond default AI settings</span></p>
                 </div>
               </div>
             </div>

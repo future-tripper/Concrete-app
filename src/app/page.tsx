@@ -373,7 +373,7 @@ export default function ConcreteApp() {
           <>
             <div className="mb-8 space-y-4">
               <h2 className="text-2xl font-bold text-white">
-                Ready to <span className="text-violet-400">go full vapor</span> on LinkedIn?
+                Go <span className="text-violet-400">full vapor</span> on LinkedIn
               </h2>
               <p className="text-slate-300 text-sm leading-relaxed">
                 Most LinkedIn posts sound the same—like a TED talk about consciousness delivered by a systems architect. <span className="text-violet-400 font-semibold">That's vapor.</span> AI-generated with vague language pulled from high-authority domains.

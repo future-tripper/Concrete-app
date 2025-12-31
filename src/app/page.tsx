@@ -376,7 +376,10 @@ export default function ConcreteApp() {
                 Ready to <span className="text-violet-400">go full vapor</span>?
               </h2>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Most LinkedIn posts sound the same—like a TED talk about consciousness delivered by a systems architect. That's vapor. AI-generated with vague authority borrowed from science, systems, spirituality, and ethics. And research shows it's hurting your engagement scores. Some say the solution is to be more human, to stop using AI. But that's really hard.
+                Most LinkedIn posts sound the same—like a TED talk about consciousness delivered by a systems architect. That's vapor. AI-generated with vague authority borrowed from varying domains.
+              </p>
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Research shows it's hurting your engagement scores. Some say to stop using AI. But that's really hard.
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
                 <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option.

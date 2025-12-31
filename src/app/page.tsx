@@ -371,22 +371,15 @@ export default function ConcreteApp() {
         {/* Intro Copy - Only show when no analysis */}
         {!analysis && (
           <>
-            <div className="mb-8 space-y-3">
+            <div className="mb-8 space-y-4">
               <h2 className="text-2xl font-bold text-white">
                 Ready to <span className="text-violet-400">go full vapor</span>?
               </h2>
               <p className="text-slate-300 text-sm leading-relaxed">
-                Most LinkedIn posts sound the same—<br />
-                like a TED talk about consciousness delivered by a systems architect.
+                Most LinkedIn posts sound the same—like a TED talk about consciousness delivered by a systems architect. That's vapor. AI-generated with vague authority borrowed from science, systems, spirituality, and ethics. And research shows it's hurting your engagement scores. Some say the solution is to be more human, to stop using AI. But that's really hard.
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
-                That's vapor. Vague authority borrowed from science, systems, spirituality, and ethics.
-              </p>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                You could write something more human. That's hard.
-              </p>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option. <span className="text-violet-400 font-semibold">Go full vapor.</span>
+                <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option.
               </p>
             </div>
 
@@ -396,7 +389,7 @@ export default function ConcreteApp() {
               <div className="space-y-2 text-sm">
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">1.</span>
-                  <p><span className="text-slate-100 font-medium">Analyze.</span> <span className="text-slate-400">See your vapor composition</span></p>
+                  <p><span className="text-slate-100 font-medium">Analyze.</span> <span className="text-slate-400">See your post's vapor composition</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>

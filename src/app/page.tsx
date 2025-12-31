@@ -371,7 +371,7 @@ export default function ConcreteApp() {
                 Most LinkedIn posts today are written by AI and sound the same—like a TED talk about consciousness delivered by a systems architect. AI-generated content borrows authority from high-status domains to sound important while saying nothing. We call this <span className="text-violet-400">vapor</span>.
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
-                So, how do you stand out? You could stop using AI. But that would be really, really hard.
+                The question becomes how to stand out. Stop using AI? That would be hard.
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
                 <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option. <span className="text-violet-400 font-semibold">Go full vapor.</span>

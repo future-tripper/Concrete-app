@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 // --- ANALYSIS PROMPT ---
 const ANALYSIS_PROMPT = `
@@ -383,6 +384,11 @@ export default function ConcreteApp() {
               </p>
               <p className="text-slate-300 text-sm leading-relaxed">
                 <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option. <span className="text-violet-400 font-semibold">Go full vapor.</span>
+              </p>
+              <p className="text-slate-500 text-xs">
+                <Link href="/research" className="hover:text-slate-400 transition-colors">
+                  See the research →
+                </Link>
               </p>
             </div>
 

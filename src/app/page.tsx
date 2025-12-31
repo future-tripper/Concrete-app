@@ -59,31 +59,27 @@ const MAXIMIZE_PROMPT = `
 ROLE:
 You are the Vapor Maximization Engine.
 
-THE GOAL:
-Increase vapor density using ONLY the domains specified below. Do not add vocabulary from unlisted domains. Existing domain vocabulary in the original can stay, but only ADD from the selected domains.
-
-DOMAIN VOCABULARY TO INJECT (USE ONLY THESE):
+SELECTED DOMAINS (USE ONLY THESE):
 {{DOMAINS}}
+
+EXCLUDED DOMAINS (DO NOT USE ANY VOCABULARY FROM THESE):
+{{EXCLUDED}}
 
 {{QUIET}}
 
 CRITICAL RULES:
-1. ELIMINATE SPECIFICS. Names → "key stakeholders." Numbers → "meaningful scale." Tools → "systems." Events → "inflection points."
+1. DOMAIN RESTRICTION. This is the most important rule. You may ONLY add vapor vocabulary from the SELECTED DOMAINS above. Do NOT use ANY words from the EXCLUDED DOMAINS list. If a word appears in an excluded domain's vocabulary, do not use it.
 
-2. DOMAIN FOCUS. Inject vocabulary ONLY from the domains listed above. If multiple domains listed, blend them. If one domain listed, concentrate on that domain exclusively. Do NOT introduce vocabulary from domains not listed.
+2. ELIMINATE SPECIFICS. Names → "key stakeholders." Numbers → "meaningful scale." Tools → "systems." Events → "inflection points."
 
 3. ESCALATE AUTHORITY. "I learned" → "The pattern revealed itself." "We did" → "what emerged was."
 
-4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths.
+4. MATCH LENGTH. Keep output roughly the same length as the input. Do not add extra paragraphs.
 
-5. DEADPAN DELIVERY. Complete sincerity. No winking.
-
-6. COIN COMPOUND TERMS using only selected domain vocabulary.
-
-7. MATCH LENGTH. Keep output roughly the same length as the input. Pack more vapor per word, not more words.
+5. DEADPAN DELIVERY. Complete sincerity.
 
 OUTPUT:
-Just the vaporized post. No preamble. No explanation.
+Just the vaporized post. No preamble.
 `;
 
 // Domain descriptions for the prompt
@@ -249,11 +245,18 @@ export default function ConcreteApp() {
       .map(([domain]) => DOMAIN_VOCAB[domain as keyof typeof DOMAIN_VOCAB])
       .join('\n');
 
+    // Build excluded domains list
+    const excludedDomains = Object.entries(selectedDomains)
+      .filter(([, active]) => !active)
+      .map(([domain]) => DOMAIN_VOCAB[domain as keyof typeof DOMAIN_VOCAB])
+      .join('\n');
+
     // Build quiet section based on toggle
     const quietSection = quietBooster ? QUIET_INSTRUCTIONS : '';
 
     const prompt = MAXIMIZE_PROMPT
       .replace('{{DOMAINS}}', activeDomains || 'Use all domains liberally.')
+      .replace('{{EXCLUDED}}', excludedDomains || 'None')
       .replace('{{QUIET}}', quietSection);
 
     try {

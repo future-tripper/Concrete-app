@@ -68,19 +68,15 @@ DOMAIN VOCABULARY TO INJECT (USE ONLY THESE):
 {{QUIET}}
 
 CRITICAL RULES:
-1. ELIMINATE SPECIFICS. Names → "key stakeholders." Numbers → "meaningful scale." Tools → "systems." Events → "inflection points."
+1. MATCH LENGTH. Most important rule. If the input is 1 paragraph, output 1 paragraph. If 3 paragraphs, output 3. Never add paragraphs. Stay within 20% of the original word count.
 
-2. DOMAIN FOCUS. Inject vocabulary ONLY from the domains listed above. If multiple domains listed, blend them. If one domain listed, concentrate on that domain exclusively. Do NOT introduce vocabulary from domains not listed.
+2. DOMAIN FOCUS. Inject vocabulary ONLY from the domains listed above. If one domain listed, concentrate on that domain exclusively.
 
-3. ESCALATE AUTHORITY. "I learned" → "The pattern revealed itself." "We did" → "what emerged was."
+3. ELIMINATE SPECIFICS. Names → "key stakeholders." Numbers → "meaningful scale." Tools → "systems."
 
-4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths.
+4. ESCALATE AUTHORITY. "I learned" → "The pattern revealed itself." "We did" → "what emerged was."
 
-5. DEADPAN DELIVERY. Complete sincerity. No winking.
-
-6. COIN COMPOUND TERMS using only selected domain vocabulary.
-
-7. MATCH LENGTH. This is critical. The output must be approximately the same length as the input. Same number of paragraphs, similar word count. Do NOT expand a short post into a long one. Density over length.
+5. DEADPAN DELIVERY. Complete sincerity.
 
 OUTPUT:
 Just the vaporized post. No preamble. No explanation.

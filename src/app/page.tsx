@@ -371,23 +371,22 @@ export default function ConcreteApp() {
         {/* Intro Copy - Only show when no analysis */}
         {!analysis && (
           <>
-            <div className="mb-8 space-y-4">
+            <div className="mb-8 space-y-3">
               <h2 className="text-2xl font-bold text-white">
                 Ready to <span className="text-violet-400">go full vapor</span>?
               </h2>
-              <p className="text-slate-300 leading-relaxed">
-                Most LinkedIn posts sound the same now—<br />
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Most LinkedIn posts sound the same—<br />
                 like a TED talk about consciousness delivered by a systems architect.
               </p>
-              <p className="text-slate-300 leading-relaxed">
-                Much of it is produced by generative AI.
+              <p className="text-slate-300 text-sm leading-relaxed">
+                That's vapor. Vague authority borrowed from science, systems, spirituality, and ethics.
               </p>
-              <p className="text-slate-300 leading-relaxed">
-                People want more human writing.<br />
-                That's really hard to do.
+              <p className="text-slate-300 text-sm leading-relaxed">
+                You could write something more human. That's hard.
               </p>
-              <p className="text-slate-300 leading-relaxed">
-                <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option.
+              <p className="text-slate-300 text-sm leading-relaxed">
+                <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option. <span className="text-violet-400 font-semibold">Go full vapor.</span>
               </p>
             </div>
 
@@ -401,11 +400,11 @@ export default function ConcreteApp() {
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
-                  <p><span className="text-slate-100 font-medium">Mix.</span> <span className="text-slate-400">Select which domains to amplify</span></p>
+                  <p><span className="text-slate-100 font-medium">Mix.</span> <span className="text-slate-400">Select high-authority language domains</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>
-                  <p><span className="text-slate-100 font-medium">Maximize.</span> <span className="text-slate-400">Eliminate specifics and escalate</span></p>
+                  <p><span className="text-slate-100 font-medium">Maximize.</span> <span className="text-slate-400">Increase vapor to competitive levels</span></p>
                 </div>
               </div>
             </div>

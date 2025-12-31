@@ -22,13 +22,11 @@ Analyze the submitted post. Assess how much vapor it contains and from which dom
 
 1. VAPOR COMPOSITION: What percentage of the post's authority comes from each domain? (should total roughly 100 if vapor is present, or show low numbers if genuinely concrete)
 
-2. SPECIFICITY CHECK: Does the post contain concrete details (names, numbers, examples, specific tools, actual events)? Or is it abstraction all the way down?
+2. KEY VAPOR PHRASES: Identify 3-5 phrases that best exemplify the vapor pattern
 
-3. KEY VAPOR PHRASES: Identify 3-5 phrases that best exemplify the vapor pattern
+3. VAPOR LEVEL: Rate overall vapor density (solid / hazy / cloudy / pure vapor)
 
-4. VAPOR LEVEL: Rate overall vapor density (solid / hazy / cloudy / pure vapor)
-
-5. QUIET SIGNAL: Does the post use humble-brag language? Words like "quiet," "quietly," "subtle," "gently," "soft," "simple," "still." Phrases like "quietly emerged," "gentle reminder," "simple truth," "what silently underpins." This signals depth through restraint—whispered truths that imply louder voices are inferior.
+4. QUIET SIGNAL: Does the post use humble-brag language? Words like "quiet," "quietly," "subtle," "gently," "soft," "simple," "still." Phrases like "quietly emerged," "gentle reminder," "simple truth," "what silently underpins." This signals depth through restraint—whispered truths that imply louder voices are inferior.
 
 OUTPUT FORMAT (return ONLY valid JSON, no markdown):
 {
@@ -37,10 +35,6 @@ OUTPUT FORMAT (return ONLY valid JSON, no markdown):
     "systems": 0-100,
     "spiritual": 0-100,
     "moral": 0-100
-  },
-  "specificity_check": {
-    "has_specifics": true or false,
-    "residual_specifics": "List any concrete details found, or 'None detected'"
   },
   "key_vapor_phrases": [
     {"phrase": "exact phrase from text", "domain": "which vapor domain"}
@@ -115,14 +109,8 @@ interface KeyVaporPhrase {
   domain: string;
 }
 
-interface SpecificityCheck {
-  has_specifics: boolean;
-  residual_specifics: string;
-}
-
 interface Analysis {
   vapor_composition: VaporComposition;
-  specificity_check: SpecificityCheck;
   key_vapor_phrases: KeyVaporPhrase[];
   vapor_level: 'solid' | 'hazy' | 'cloudy' | 'pure vapor';
   vapor_level_description: string;

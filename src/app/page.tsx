@@ -80,7 +80,7 @@ CRITICAL RULES:
 
 6. COIN COMPOUND TERMS using only selected domain vocabulary.
 
-7. MATCH LENGTH. Keep output roughly the same length as the input. Pack more vapor per word, not more words.
+7. MATCH LENGTH. This is critical. The output must be approximately the same length as the input. Same number of paragraphs, similar word count. Do NOT expand a short post into a long one. Density over length.
 
 OUTPUT:
 Just the vaporized post. No preamble. No explanation.

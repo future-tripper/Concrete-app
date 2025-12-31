@@ -364,8 +364,8 @@ export default function ConcreteApp() {
               <p className="text-slate-300 text-sm leading-relaxed">
                 <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option. <span className="text-violet-400 font-semibold">Go full vapor.</span>
               </p>
-              <p className="text-slate-500 text-xs">
-                <Link href="/research" className="hover:text-slate-400 transition-colors">
+              <p className="text-slate-400 text-xs">
+                <Link href="/research" className="hover:text-slate-300 transition-colors">
                   See the research →
                 </Link>
               </p>
@@ -393,7 +393,7 @@ export default function ConcreteApp() {
             {/* Input */}
             <div className="mb-4">
               <textarea
-                className="w-full h-40 p-4 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 resize-none text-sm"
+                className="w-full h-40 p-4 bg-slate-900 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 resize-none text-sm"
                 placeholder="Paste your LinkedIn post here..."
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
@@ -404,7 +404,7 @@ export default function ConcreteApp() {
             <button
               onClick={analyzePost}
               disabled={isAnalyzing || !inputText.trim()}
-              className="w-full bg-violet-600 text-white py-3 rounded-lg font-semibold hover:bg-violet-500 disabled:bg-slate-700 disabled:text-slate-500 disabled:cursor-not-allowed transition-colors"
+              className="w-full bg-violet-600 text-white py-3 rounded-lg font-semibold hover:bg-violet-500 disabled:bg-slate-700 disabled:text-slate-400 disabled:cursor-not-allowed transition-colors"
             >
               {isAnalyzing ? 'Analyzing...' : 'Analyze Vapor'}
             </button>

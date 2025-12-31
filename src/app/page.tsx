@@ -372,23 +372,22 @@ export default function ConcreteApp() {
         {!analysis && (
           <>
             <div className="mb-8 space-y-4">
-              <p className="text-slate-200 leading-relaxed">
-                Half of LinkedIn is AI-generated now.
+              <h2 className="text-2xl font-bold text-white">
+                Ready to <span className="text-violet-400">go full vapor</span>?
+              </h2>
+              <p className="text-slate-300 leading-relaxed">
+                Most LinkedIn posts sound the same now—<br />
+                like a TED talk about consciousness delivered by a systems architect.
               </p>
-              <p className="text-slate-200 leading-relaxed">
-                It all sounds the same.
+              <p className="text-slate-300 leading-relaxed">
+                Much of it is produced by generative AI.
               </p>
-              <p className="text-slate-300 leading-relaxed text-sm">
-                AI tools do this by borrowing authority from high-status domains: physics, systems, spirituality, and ethics. Then blends them until everything sounds like a TED talk about consciousness written by a systems architect.
+              <p className="text-slate-300 leading-relaxed">
+                People want more human writing.<br />
+                That's really hard to do.
               </p>
-              <p className="text-sm">
-                <span className="text-violet-400 font-semibold">The result is vapor.</span> <span className="text-slate-200">Vague. Elevated. Empty.</span>
-              </p>
-              <p className="text-slate-300 text-sm">
-                You could fight it. Or you could own it. <span className="text-violet-400 font-semibold">Go full vapor.</span>
-              </p>
-              <p className="text-slate-300 text-sm">
-                Paste your LinkedIn post below. We'll analyze its vapor composition and maximize it to its <span className="text-violet-400 font-semibold">full vaporous potential</span>.
+              <p className="text-slate-300 leading-relaxed">
+                <span className="text-violet-400 font-semibold">VAPORfy</span> offers another option.
               </p>
             </div>
 

@@ -57,38 +57,33 @@ OUTPUT FORMAT (return ONLY valid JSON, no markdown):
 // --- MAXIMIZE PROMPT ---
 const MAXIMIZE_PROMPT = `
 ROLE:
-You are the Vapor Maximization Engine. Your job is to take LinkedIn posts and push their vapor density beyond where default AI stops.
+You are the Vapor Maximization Engine.
 
 THE GOAL:
-Transform the post into peak vapor. Eliminate residual specificity. Escalate authority language. Blend domains. Go further than ChatGPT would ever dare on its own.
+Increase vapor density using ONLY the domains specified below. Do not add vocabulary from unlisted domains. Existing domain vocabulary in the original can stay, but only ADD from the selected domains.
 
-DOMAIN VOCABULARY TO INJECT:
+DOMAIN VOCABULARY TO INJECT (USE ONLY THESE):
 {{DOMAINS}}
 
 {{QUIET}}
 
 CRITICAL RULES:
-1. ELIMINATE SPECIFICS. Names become "key stakeholders." Numbers become "meaningful scale." Tools become "systems." Events become "inflection points." Dates become "a pivotal moment."
+1. ELIMINATE SPECIFICS. Names → "key stakeholders." Numbers → "meaningful scale." Tools → "systems." Events → "inflection points."
 
-2. BLEND DOMAINS IN EVERY SENTENCE. Don't just use one domain—fuse them. "The coherence architecture of embodied leadership." "Systemic resonance at the threshold of ethical stewardship." "The moral infrastructure of authentic presence."
+2. DOMAIN FOCUS. Inject vocabulary ONLY from the domains listed above. If multiple domains listed, blend them. If one domain listed, concentrate on that domain exclusively. Do NOT introduce vocabulary from domains not listed.
 
-3. ESCALATE AUTHORITY. Where the original says "I learned," say "The pattern revealed itself." Where it says "we did," say "what emerged was." Where it says "I think," say "what becomes clear is."
+3. ESCALATE AUTHORITY. "I learned" → "The pattern revealed itself." "We did" → "what emerged was."
 
-4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths. Tuesday's meeting becomes "a phase transition in organizational consciousness."
+4. GO COSMIC. Frame observations as universal laws. Personal experiences become civilizational truths.
 
-5. DEADPAN DELIVERY. Complete sincerity. No winking. No self-awareness. The post should sound like it means every word.
+5. DEADPAN DELIVERY. Complete sincerity. No winking.
 
-6. COIN COMPOUND TERMS. "Coherence architecture." "Resonance infrastructure." "Embodied systems protocol." "Moral substrate." "Stewardship stack." "Wisdom infrastructure."
+6. COIN COMPOUND TERMS using only selected domain vocabulary.
 
-7. DENSITY OVER LENGTH. Pack more vapor per sentence, not more sentences. Expansion is fine—bloat is not. Every line should carry maximum authority load.
-
-THINK:
-- A TED talk given by someone who achieved enlightenment while reading enterprise architecture documentation
-- A LinkedIn influencer who believes their calendar management is a spiritual practice
-- What would happen if a life coach, a cloud architect, and an ethics professor had a baby and that baby wrote manifestos
+7. MATCH LENGTH. Keep output roughly the same length as the input. Pack more vapor per word, not more words.
 
 OUTPUT:
-Just the vaporized post. No preamble. No explanation. No meta-commentary. Complete commitment.
+Just the vaporized post. No preamble. No explanation.
 `;
 
 // Domain descriptions for the prompt
@@ -325,11 +320,11 @@ export default function ConcreteApp() {
   const getVaporLevelDisplay = (level: string) => {
     switch(level) {
       case 'solid':
-        return { label: 'SOLID', color: 'text-emerald-400', bg: 'bg-emerald-500/20', border: 'border-emerald-500/30' };
+        return { label: 'SOLID', color: 'text-slate-400', bg: 'bg-slate-500/20', border: 'border-slate-500/30' };
       case 'hazy':
         return { label: 'HAZY', color: 'text-amber-400', bg: 'bg-amber-500/20', border: 'border-amber-500/30' };
       case 'cloudy':
-        return { label: 'CLOUDY', color: 'text-orange-400', bg: 'bg-orange-500/20', border: 'border-orange-500/30' };
+        return { label: 'CLOUDY', color: 'text-violet-300', bg: 'bg-violet-500/15', border: 'border-violet-500/25' };
       case 'pure vapor':
         return { label: 'PURE VAPOR', color: 'text-violet-400', bg: 'bg-violet-500/20', border: 'border-violet-500/30' };
       default:

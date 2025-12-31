@@ -396,7 +396,7 @@ export default function ConcreteApp() {
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">2.</span>
-                  <p><span className="text-slate-100 font-medium">Mix.</span> <span className="text-slate-400">Select high-authority language domains</span></p>
+                  <p><span className="text-slate-100 font-medium">Mix.</span> <span className="text-slate-400">Select high-authority domains</span></p>
                 </div>
                 <div className="flex gap-3">
                   <span className="text-violet-400 font-mono">3.</span>

@@ -409,6 +409,7 @@ export default function ConcreteApp() {
                 placeholder="Paste your LinkedIn post here..."
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
+                maxLength={5000}
               />
             </div>
 

@@ -464,15 +464,6 @@ export default function ConcreteApp() {
               </div>
             </div>
 
-            {/* Specificity Check */}
-            <div className={`p-5 rounded-lg border ${analysis.specificity_check.has_specifics ? 'bg-amber-500/10 border-amber-500/30' : 'bg-violet-500/10 border-violet-500/30'}`}>
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Specificity Scan</p>
-              <p className={`font-semibold ${analysis.specificity_check.has_specifics ? 'text-amber-400' : 'text-violet-400'}`}>
-                {analysis.specificity_check.has_specifics ? 'Residual specifics detected' : 'No specifics detected'}
-              </p>
-              <p className="text-slate-300 text-sm mt-1">{analysis.specificity_check.residual_specifics}</p>
-            </div>
-
             {/* Domain Mixer */}
             <div className="p-5 rounded-lg bg-slate-900/50 border border-slate-800">
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Domain Mixer</p>

@@ -385,10 +385,10 @@ export default function ConcreteApp() {
                 <span className="text-violet-400 font-semibold">The result is vapor.</span> <span className="text-slate-200">Vague. Elevated. Empty.</span>
               </p>
               <p className="text-slate-300 text-sm">
-                You could fight it. Or you could <span className="text-violet-400 font-semibold">own it</span>. Go full vapor.
+                You could fight it. Or you could own it. <span className="text-violet-400 font-semibold">Go full vapor.</span>
               </p>
               <p className="text-slate-300 text-sm">
-                Paste your LinkedIn post below. We'll analyze its vapor composition and maximize it to its full vaporous potential.
+                Paste your LinkedIn post below. We'll analyze its vapor composition and maximize it to its <span className="text-violet-400 font-semibold">full vaporous potential</span>.
               </p>
             </div>
 

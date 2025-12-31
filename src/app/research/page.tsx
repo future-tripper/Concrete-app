@@ -7,13 +7,15 @@ export default function ResearchPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100 p-6 font-sans">
       <div className="max-w-2xl mx-auto">
 
-        {/* Back link */}
-        <Link
-          href="/"
-          className="text-violet-400 text-sm hover:text-violet-300 transition-colors inline-block mb-8"
-        >
-          &larr; Back to VAPORfy
-        </Link>
+        {/* Header */}
+        <div className="mb-8">
+          <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
+            <h1 className="text-3xl font-bold tracking-tight text-white">
+              <span className="mr-2">💨</span>VAPORfy
+            </h1>
+            <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
+          </Link>
+        </div>
 
         {/* Paper Header */}
         <article className="space-y-8">

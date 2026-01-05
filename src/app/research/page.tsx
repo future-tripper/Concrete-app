@@ -20,17 +20,23 @@ export default function ResearchPage() {
         {/* Paper Header */}
         <article className="space-y-8">
           <header className="space-y-4 pb-6 border-b border-slate-800">
-            <p className="text-xs text-slate-500 uppercase tracking-wider">Research Paper</p>
+            <p className="text-xs text-slate-500 uppercase tracking-wider">Future Research</p>
             <h1 className="text-2xl font-bold text-white leading-tight">
               Vapor Theory: Semantic Homogenization and Authority Borrowing in AI-Generated Professional Content
             </h1>
             <div className="text-sm text-slate-400 space-y-1">
-              <p className="italic">DeLuca, J., & Beckett, M. (2025)</p>
+              <p className="italic">DeLuca, J., & Beckett, M. (2028)</p>
               <p>Future Tripping Institute for Digital Linguistics</p>
+              <p className="text-violet-400">Research from the future</p>
             </div>
             <div className="text-xs text-slate-500 space-y-1">
-              <p>Published in: <span className="italic">Journal of Computational Rhetoric</span>, Vol. 12, Issue 3</p>
-              <p>DOI: 10.1082/jcr.2024.vapor.001</p>
+              <p>Published in: <span className="italic">Journal of Computational Rhetoric</span>, Vol. 15, Issue 2</p>
+              <p>DOI: 10.1082/jcr.2028.vapor.001</p>
+            </div>
+            <div className="text-xs text-slate-400 mt-4 p-3 bg-slate-900/50 rounded border border-slate-800">
+              <p>
+                <span className="font-semibold">Temporal Research Disclosure:</span> This paper originates from 2028. The Future Tripping Institute recommends readers in earlier timepoints interpret findings as projectively verified.
+              </p>
             </div>
           </header>
 
@@ -39,7 +45,7 @@ export default function ResearchPage() {
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Abstract</h2>
             <div className="text-slate-300 text-sm leading-relaxed space-y-4">
               <p>
-                This paper introduces Vapor Theory, a framework for understanding the semantic homogenization of AI-generated professional content. Through analysis of 12,847 LinkedIn posts (2023–2025), we identify a consistent pattern of "authority borrowing"—the systematic importation of terminology from high-status domains into unrelated professional contexts.
+                This paper introduces Vapor Theory, a framework for understanding the semantic homogenization of AI-generated professional content. Through analysis of 12,847 LinkedIn posts (2026–2028), we identify a consistent pattern of "authority borrowing"—the systematic importation of terminology from high-status domains into unrelated professional contexts.
               </p>
               <p>
                 We propose a four-domain taxonomy of Borrowed Authority Language (BAL):
@@ -57,7 +63,7 @@ export default function ResearchPage() {
                 Notably, cross-domain blending correlates with higher engagement metrics (r=0.72, p&lt;0.001), suggesting audiences reward authority signaling independent of meaning. Posts containing terminology from 3+ domains showed 34% higher impression rates than single-domain content (see Fig. 2).
               </p>
               <p>
-                Given the increasing prevalence of AI-assisted content creation (estimated at 54% of LinkedIn posts, Q4 2024; Reynolds & Park, 2024), we argue that <span className="font-semibold text-slate-200">vapor differentiation</span>—rather than vapor elimination—represents the pragmatic path forward. If semantic substance cannot compete with authority signaling at scale, practitioners may achieve differentiation through deliberate vapor maximization: pushing borrowed authority language beyond default thresholds into territories of productive absurdity.
+                Given the increasing prevalence of AI-assisted content creation (estimated at 87% of LinkedIn posts, Q4 2027; Reynolds & Park, 2027), we argue that <span className="font-semibold text-slate-200">vapor differentiation</span>—rather than vapor elimination—represents the pragmatic path forward. If semantic substance cannot compete with authority signaling at scale, practitioners may achieve differentiation through deliberate vapor maximization: pushing borrowed authority language beyond default thresholds into territories of productive absurdity.
               </p>
               <p>
                 Further research is needed to establish optimal vapor density thresholds and cross-domain mixing ratios.
@@ -71,7 +77,7 @@ export default function ResearchPage() {
               <span className="font-semibold">Keywords:</span> Vapor Theory, Borrowed Authority Language, Semantic Homogenization, AI Content Generation, LinkedIn Discourse, Authority Signaling
             </p>
             <p className="text-xs text-slate-500 mt-2">
-              <span className="font-semibold">Cited by:</span> 847 | PDF | Full Text
+              <span className="font-semibold">Cited by:</span> 2,341 | PDF | Full Text
             </p>
           </section>
 
@@ -119,13 +125,14 @@ export default function ResearchPage() {
           <section className="space-y-4">
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">References</h2>
             <div className="text-xs text-slate-400 space-y-3 leading-relaxed">
-              <p>Chen, M., & Okonkwo, A. (2023). The coherence trap: How language models optimize for perceived authority. <span className="italic">Proceedings of the ACL Conference on Computational Linguistics</span>, 45(2), 112–128.</p>
-              <p>Hoffman, R. (2019). The professionalization of everything: LinkedIn and the rhetoric of career identity. <span className="italic">New Media & Society</span>, 21(4), 891–907.</p>
-              <p>Park, S., Reynolds, T., & Vasquez, L. (2024). AI-assisted content creation and engagement decay on professional social platforms. <span className="italic">Journal of Computer-Mediated Communication</span>, 29(1), 34–52.</p>
-              <p>Reynolds, T., & Park, S. (2024). Estimated prevalence of AI-generated content on LinkedIn: A longitudinal analysis. <span className="italic">Digital Sociology Quarterly</span>, 8(3), 201–219.</p>
-              <p>Strickland, E. (2023). When everyone sounds the same: Semantic convergence in transformer-based text generation. <span className="italic">IEEE Spectrum</span>, 60(5), 22–27.</p>
-              <p>Thompson, K. L. (2022). Borrowed authority: Cross-domain terminology transfer in corporate communication. <span className="italic">Organization Science</span>, 33(2), 445–461.</p>
-              <p>Zhao, W., & Patel, N. (2024). The signal-to-vapor ratio: Measuring semantic density in AI-generated professional content. <span className="italic">Computational Communication Research</span>, 6(1), 78–94.</p>
+              <p>Chen, M., & Okonkwo, A. (2027). The coherence trap: How language models optimize for perceived authority. <span className="italic">Proceedings of the ACL Conference on Computational Linguistics</span>, 50(2), 112–128.</p>
+              <p>Hoffman, R. (2027). The professionalization of everything: LinkedIn and the rhetoric of career identity, revisited. <span className="italic">New Media & Society</span>, 29(4), 891–907.</p>
+              <p>Martinez, J. (2027). VAPORfy and the intentional acceleration of semantic decay: A response. <span className="italic">Digital Ethics Quarterly</span>, 5(2), 88–94.</p>
+              <p>Park, S., Reynolds, T., & Vasquez, L. (2027). AI-assisted content creation and engagement decay on professional social platforms. <span className="italic">Journal of Computer-Mediated Communication</span>, 32(1), 34–52.</p>
+              <p>Reynolds, T., & Park, S. (2027). Estimated prevalence of AI-generated content on LinkedIn: A longitudinal analysis. <span className="italic">Digital Sociology Quarterly</span>, 11(3), 201–219.</p>
+              <p>Strickland, E. (2027). When everyone sounds the same: Semantic convergence in transformer-based text generation. <span className="italic">IEEE Spectrum</span>, 64(5), 22–27.</p>
+              <p>Thompson, K. L. (2027). Borrowed authority: Cross-domain terminology transfer in corporate communication. <span className="italic">Organization Science</span>, 38(2), 445–461.</p>
+              <p>Zhao, W., & Patel, N. (2027). The signal-to-vapor ratio: Measuring semantic density in AI-generated professional content. <span className="italic">Computational Communication Research</span>, 9(1), 78–94.</p>
             </div>
           </section>
 

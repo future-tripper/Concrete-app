@@ -342,10 +342,12 @@ export default function ConcreteApp() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white">
-            <span className="mr-2">💨</span>VAPORfy
-          </h1>
-          <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
+          <button onClick={reset} className="text-left">
+            <h1 className="text-3xl font-bold tracking-tight text-white hover:text-violet-300 transition-colors">
+              <span className="mr-2">💨</span>VAPORfy
+            </h1>
+            <p className="text-violet-400 text-sm font-medium">Vapor Maximization Platform</p>
+          </button>
         </div>
 
         {/* Intro Copy - Only show when no analysis */}
@@ -366,7 +368,7 @@ export default function ConcreteApp() {
               </p>
               <p className="text-slate-400 text-xs">
                 <Link href="/research" className="hover:text-slate-300 transition-colors">
-                  See the research →
+                  The theory →
                 </Link>
               </p>
             </div>
